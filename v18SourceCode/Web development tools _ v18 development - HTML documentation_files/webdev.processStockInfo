@@ -1,0 +1,49 @@
+webdev.processStockInfo({
+ "indexQuotes": [],
+ "stockQuotes": [ {
+  "changeDols": 1.51,
+  "changeInPercentage": 0.88,
+  "chartUrl": "-03NA000000IBM",
+  "dayHigh": 174.4,
+  "dayLow": 173.22,
+  "dividend": 5.2,
+  "earnings": 0,
+  "name": "IBM Corporation",
+  "newsUrl": "/workplace/myportal/news/archive",
+  "openPrice": 173.5,
+  "prevClose": 172.28,
+  "price": 173.79,
+  "priceTime":   {
+   "date": 14,
+   "day": 4,
+   "hours": 16,
+   "minutes": 48,
+   "month": 4,
+   "nanos": 0,
+   "seconds": 0,
+   "time": 1431622080000,
+   "timezoneOffset": 0,
+   "year": 115
+  },
+  "profileUrl": "",
+  "ratio": 0,
+  "retrieveTime":   {
+   "date": 14,
+   "day": 4,
+   "hours": 16,
+   "minutes": 4,
+   "month": 4,
+   "seconds": 33,
+   "time": 1431619473431,
+   "timezoneOffset": 0,
+   "year": 115
+  },
+  "share": 12,
+  "symbol": "IBM",
+  "type": 0,
+  "volume": 807434,
+  "yearHigh": 196.4,
+  "yearLow": 149.52,
+  "yield": 3
+ }]
+});

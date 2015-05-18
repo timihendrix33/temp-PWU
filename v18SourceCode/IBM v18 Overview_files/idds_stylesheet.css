@@ -1,0 +1,740 @@
+/*  V18 IDDS - CSS
+	Owner: Jayanta and Team 
+	Last Updated : 10th November 2014
+	Version : 5.0.0  */
+
+/* FONT FAMILY */
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon .ibm-container-body .ibm-columns .ibm-col-6-2 h3, .ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon ul.ibm-ovr-carosel-tabs li, .ibm-cdds-page #overlay-2 .ibm-body .ibm-main .ibm-title h2, #small-header-menus h2 a, #small-header-menus ul li a, .ibm-cdds-page #home h3, .ibm-cdds-page #home h1, .ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1, .ibm-home-search input[type="text"], .section-search input[type="text"], #ibm-purple-background .ibm-columns .ibm-col-1-1 h2 {
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue","HelvLightIBM",Arial,sans-serif;}
+/* FONT FAMILY*/
+
+/* TEXT ALLIGN LEFT */
+.ibm-cdds-page .ibm-simple-show-hide, .ibm-cdds-page #v18-getting-started .ibm-columns .ibm-col-1-1, .ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon .ibm-container-body .ibm-columns .ibm-col-6-2 h3, #ibm-purple-background .ibm-columns .ibm-col-1-1 p, #ibm-purple-background .ibm-columns .ibm-col-6-2 p, .ibm-home-search input[type="text"], #small-header-menus h2, #patterns .ibm-link-list li {
+	text-align: left;}
+/* TEXT ALLIGN LEFT */
+
+/*IBM BULLETS */ 
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon ul.ibm-ovr-carosel-tabs li:before, .ibm-cdds-page .ibm-bullet:before, #home-icons .ibm-columns .ibm-col-1-1 ul.ibm-topic-links li:before, .ibm-topic-links ul li:before, #small-header-menus ul li:before, .ibm-search-filter ul li:before {
+    content: "";}
+.ibm-cdds-page #ibm-parent-link a:before, .ibm-cdds-page .ibm-caution-link:before, .ibm-cdds-page .ibm-forward-link:before, .ibm-cdds-page .ibm-callaction-link:before {
+  color: #00649d !important;}
+/*IBM BULLETS */
+
+/*Autocomplete*/
+.ui-autocomplete.ui-widget-content{ width: 30%; background: #fff; border: #333333 1px solid;z-index: 9999;}
+.ui-autocomplete.ui-widget-content li:hover{ background: #dedede;}
+.ui-autocomplete.ui-widget-content li:before{content: "" !important;}
+.ui-autocomplete.ui-widget-content li{padding-left:10px;}
+/*Autocomplete*/
+
+/* Bread Crums */
+ul#ibm-navigation-trail {
+    font-size: 14px;
+    padding: 12px 0 0 !important;
+    margin-bottom: -7px;width: auto !important;}
+ul#ibm-navigation-trail li a{text-decoration: none;}
+/* Bread Crum */
+#resources, #tools, #patterns, #v18-getting-started-head {min-height: 5px;}
+.clear{clear:both;}
+
+/*IBM DEFAULT CLASSES*/
+.ibm-cdds-page, #small-header-menus {width:100%;}
+.ibm-cdds-page #ibm-pcon{margin: 0px auto -9px;}
+.ibm-cdds-page .ibm-band{padding:0px;}
+.ibm-cdds-page .ibm-col-1-1 {float: none;margin: 0px auto; text-align: center;}
+.ibm-cdds-page .ibm-pad {padding-left:40px !important;}
+.ibm-cdds-page #small-header-menus .ibm-columns, .ibm-cdds-page #small-header-menus .ibm-col-1-1 {width:100% !important;padding:0px 0px !important; margin:0px auto;padding-top: 5px !important;}
+.ibm-cdds-page #ibm-content ul.ibm-portrait-module-list p, #ibm-content ul.ibm-thumbnail-list p {margin-left: 70px;padding: 0 0 0 10px !important;}
+.ibm-cdds-page #ibm-top{margin-top: 29px;}
+.ibm-cdds-page .ui-helper-hidden-accessible{display:none;}
+.ibm-cdds-page .ibm-simple-show-hide {border-top: 0 solid !important;}
+.ibm-cdds-page .ui-state-focus:before{color: #f19027;}
+.ibm-cdds-page .ui-state-focus{ background: none repeat scroll 0 0 #dedede;}
+.ibm-cdds-page #ibm-related-content{width:auto !important}
+#ibm-leadspace-head {display:none !important;}
+#ibm-pcon {text-shadow:none !important;}
+.ibm-cdds-page #home .ibm-columns .ibm-col-1-1 {text-align: center;}
+/*IBM DEFAULT CLASSES*/
+
+/* OVERVIEW PAGE CAROSEL DESIGNs STARTS HERE */
+#ibm-purple-background .ibm-columns{
+	  margin: 0 auto 15px !important;
+}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon .ibm-container-body .ibm-columns .ibm-col-6-2 h3 {
+     font-size: 36px; line-height: 49px; /* margin-top: 16px; */ padding-top: 8px; }
+.ibm-cdds-page #ibm-purple-background #ibm-content .ibm-container {
+    border-top: 0px none #666;
+    clear: both;
+    margin: 70px auto 20px !important;}
+.ibm-cdds-page #ibm-overview-caro, #ibm-purple-background, #v18-getting-started {background-color: transparent !important;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon ul.ibm-ovr-carosel-tabs li{
+	float:left;
+	font-weight: normal;
+	font-size: 18px;
+	margin-right: 31px;
+    padding-left: 2px;
+	color:#999999;
+	list-style-type:square !important;
+	margin-bottom:10px;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon ul.ibm-ovr-carosel-tabs li:first-child{ list-style-type:none !important;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .ibm-ribbon ul.ibm-ovr-carosel-tabs li:first-child{ padding-left: 0px;}
+.adaptive,.releases,.boarding { border-top:0px none !important;	margin-bottom: 60px !important;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .adaptive h3{color:#7f1c7d !important;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .releases h3{color:#008abf !important;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .boarding h3{color:#17af4b !important;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .adaptive .ibm-container-body{border-top: 3px solid #7f1c7d;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .releases .ibm-container-body{border-top: 3px solid #008abf;}
+.ibm-cdds-page .ibm-columns .ibm-col-1-1 .boarding .ibm-container-body{border-top: 3px solid #17af4b;}
+.ibm-cdds-page .ibm-columns .ibm-overview-carosel {text-align: left !important;}
+
+/* OVERVIEW PAGE CAROSEL DESIGNs ENDS HERE */
+
+/* A-Z INDEX PAGE DESIGNs STARTS HERE */
+.ibm-cdds-page #ibm-content div.ibm-link-list-az ul.ibm-link-list a {
+    color: #00649d !important;
+    filter: none;
+    text-decoration: none !important;}
+.ibm-cdds-page #ibm-content div.ibm-link-list-az ul.ibm-link-list a:hover {
+    text-decoration: underline !important;
+    background-color: #fff !important;}
+.ibm-cdds-page .ibm-simple-show-hide h3 a.ibm-show-hide-link:hover {
+    color: #00649d !important;
+    text-decoration: underline !important;}
+/* .ibm-cdds-page .ibm-simple-show-hide h3 {
+    padding: 0 0 0px !important;} */
+.ibm-cdds-page .ibm-container-body .ibm-hideable p {
+    line-height: 21px;
+    margin-top: -8px;
+    padding: 0 0 11px;
+}
+.ibm-cdds-page .ibm-anchor-up-link:hover:before {
+    color: #f08f28 !important;
+}
+.ibm-cdds-page #ibm-content .ibm-columns .ibm-container {
+    margin: 10px 0 59px !important;
+}
+.ibm-show-hide-controls a.ibm-active{
+	cursor:default;
+}
+/* A-Z INDEX PAGE DESIGNs ENDS HERE */
+
+/* HOME PAGE OVERLAY CSS STARTS HERE */
+.ibm-cdds-page #overlay-2 .ibm-body .ibm-main .ibm-title {background-color: #7f1c7d;}
+.ibm-cdds-page #overlay-2 .ibm-body .ibm-main .ibm-title h2{
+	color: #ffffff; 
+	font-size: 27px;
+    line-height: 34px;
+    padding: 20px 50px;
+    text-align: center;}
+.ibm-cdds-page #overlay-2 .ibm-body .ibm-main {padding:0px;}
+.ibm-cdds-page .overlay-img{
+	background-image: url('/ibmweb/image/v18std-hp_overlay_off.png');
+	background-repeat: no-repeat;
+	height: 80px;
+	width:80px;
+	margin: 20px auto 15px;}
+.ibm-cdds-page .overlay-img:hover{background-image: url('/ibmweb/image/v18std-hp_overlay_on.png');}
+.ibm-cdds-page .overlay-img a{display:block;padding-top: 78px;}
+.ibm-cdds-page #overlay-2 .ibm-container-body p {line-height: 1.5em; padding: 12px 16px 0 20px;}
+
+/* HOME PAGE OVERLAY CSS ENDS HERE */
+
+/* TOP HEADING BAR STARTS */
+#small-header-menus{
+	display: block;
+	background-color: #00649D;
+	padding: 0px 0px;
+	z-index: 3;
+	min-height: 5px;}
+#small-header-menus h2 a{ 
+	color: #ffffff; 
+	font-size: 23px;
+    line-height: 47px;
+    float: left;
+    margin:20px 4% 0px 20px;
+    text-decoration: none;}
+#small-header-menus .ibm-columns , #small-header-menus .ibm-columns .ibm-col-1-1{
+	width:100% !important;
+	padding: 0px 0px;}
+#small-header-menus .ibm-columns .ibm-col-1-1 p{
+	padding: 0px 0px 4px 0px;}
+#small-header-menus .section-search{  
+	border-bottom: 1px solid #ccc;
+    float: left;
+    margin: 15px auto 0;
+    padding: 0px;position: relative;}
+
+/*TOP MENU ICONS*/
+#small-header-menus ul { /* Top bar menu ul */
+	margin: 0px 20px 0px 0px;
+	height: 96px;
+	float: right;}
+#small-header-menus ul li{
+    float: left;
+    height: 44px;
+    line-height: 13px;
+    margin: 12px 6px 0 0;
+    overflow: visible;
+    padding: 0 0 0 0px;
+    text-align: center;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s; 
+    background-repeat: no-repeat;
+    background-position: top center;
+    width:57px;}
+#small-header-menus ul li:hover{
+	height:68px; 
+	-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+    overflow: visible;} 
+#small-header-menus ul li a{
+	color: #fff;
+    display: block;
+    overflow: visible;
+    padding-left: 0;
+    padding-top: 47px;
+    text-align: center;
+    text-decoration: none;
+    font-size:12px;}
+.ibm-cdds-page .buttom-size .ibm-col-4-1 a.ibm-forward-link:hover:before{
+	color:#f08f28 !important;}
+.ibm-menu-overview{	background-image: url("/ibmweb/image/v18std-overview_off.png");}
+.ibm-menu-overview:hover, .ibm-menu-overview-active{background-image: url("/ibmweb/image/v18std-overview_on.png");}
+.ibm-menu-patterns{	background-image: url("/ibmweb/image/v18std-patterns_off.png");}
+.ibm-menu-patterns:hover, .ibm-menu-patterns-active{background-image: url("/ibmweb/image/v18std-patterns_on.png");}
+.ibm-menu-tools{background-image: url("/ibmweb/image/v18std-tools_off.png");}
+.ibm-menu-tools:hover, .ibm-menu-tools-active{background-image: url("/ibmweb/image/v18std-tools_on.png");}
+.ibm-menu-resources{background-image: url("/ibmweb/image/v18std-resources_off.png");}
+.ibm-menu-resources:hover, .ibm-menu-resources-active{background-image: url("/ibmweb/image/v18std-resources_on.png");}
+.ibm-menu-a-z{background-image: url("/ibmweb/image/v18std-index_off.png");}
+.ibm-menu-a-z:hover, .ibm-menu-a-z-active{background-image: url("/ibmweb/image/v18std-index_on.png");}
+
+/*TOP MENU ICONS*/
+
+/*TOP HEADING BAR ENDS*/
+
+/*ALL HEADINGS*/
+
+.ibm-cdds-page h2.section-header {
+    font-size: 45px !important;
+    font-weight: bold !important;
+    text-align: center;}
+.ibm-cdds-page #home h3{ 
+    color: #ffffff;
+    font-size: 24px !important;
+    font-weight: normal !important;
+    margin:0px 0px;}
+.ibm-cdds-page #home h1{
+	color:#ffffff;
+	font-size:52px !important;}
+.ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1 {
+	color: #444444;
+    font-size: 52px !important;
+    margin: 8px 0 9px;
+    line-height: 40px;
+    padding-top: 10px;
+    padding-bottom:31px;}
+
+/*ALL HEADINGS*/
+
+/* overview purple color section */
+
+.ibm-cdds-page .ibm-columns .ibm-col-4-1 ul li a{
+	text-decoration: none;}
+.ibm-cdds-page .ibm-columns .ibm-col-4-1 ul li a:hover{
+	text-decoration: underline;}
+.ibm-cdds-page .ibm-columns .ibm-col-4-2 h3{
+	padding: 0px;
+	margin: 0px 0px 0px 70px !important;}
+.buttom-size {margin-bottom: 56px;}
+.buttom-size-tools, .buttom-size-resources{margin-bottom: 48px;}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 p{
+	color:#404041;}
+#ibm-purple-background .ibm-columns .ibm-col-6-2{
+	text-align: center;}
+#ibm-purple-background .ibm-columns .ibm-col-6-2 img {
+    margin: 7px auto 15px;}
+#ibm-purple-background .ibm-columns .ibm-col-6-2 p {
+    line-height: 26px;
+    margin-top: 12px;
+    text-shadow: none;}
+/*overview purple color section */
+
+/* SECTION EFFECTS */
+.ibm-home-search{margin: 15px auto 25px;display:inline-block; border-bottom: 1px solid #ccc;position: relative;}
+.ibm-home-search input[type="text"]{
+    background-color: transparent;
+    border: medium none;
+    border-radius: 0;
+    color: #ccc;
+    float: left;
+    font-size: 1.5em !important;
+    font-weight: normal;
+    height: auto !important;
+    padding: 9px 10px 9px 55px;
+    width: 555px;}
+.ibm-home-search input[type="text"]:focus{color:#fff !important}
+.ibm-home-search input[type="button"] {
+    background-color: transparent;
+    background-image: url("/ibmweb/image/v18std-ibm-search-icon-home.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px none #999;
+    cursor: pointer;
+    height: 36px;
+    margin: 5px 0 0 1px;
+    padding: 0;
+    width: 36px;
+    position: absolute;left:0; }
+.ibm-home-search input[type="button"]:hover {background-image: url("/ibmweb/image/v18std-ibm-search-icon-home-on.png");}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 img {margin:20px 0px 0px 0px;}
+.section-search{ margin: 30px 0px 0px 0px;}
+#search { width:359px;}
+.section-search input[type="text"]{
+	background-color: transparent;
+    border: 1px none #cccccc;
+    color: #ccc;
+    float: left;
+    font-size: 22px;
+    height: auto !important;
+    padding: 9px 8px 1px 33px;}
+.section-search input[type="text"]:focus{
+    color: #fff;}
+.section-search input[type="button"] {
+    background-color: transparent;
+    background-image: url("/ibmweb/image/v18std-ibm-search-icon-home.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px none #999;
+    cursor: pointer;
+    float: left;
+    height: 24px;
+    margin: 9px 2px 0 0;
+    padding: 4px 0;
+    width: 24px;position: absolute; left:0;
+   /*  height:24px\9; */ }
+@-moz-document url-prefix() {
+   .section-search input[type="button"] {
+    position: absolute;
+    text-indent: -9999px;
+    }
+} 
+.section-search input[type="button"]:hover {background-image: url("/ibmweb/image/v18std-ibm-search-icon-home.png");}
+#home{
+	background-color:#00649d !important;
+	margin: 0px auto !important;
+	padding-top:11px !important;
+	min-height: 205px;}
+
+/*TopLinks menus Starts Here */
+#home-icons {background-color: #fff;}
+#home-icons .ibm-columns .ibm-col-5-1{
+  margin-top:88px;
+  margin-bottom:81px;
+  background-position: center top;
+  background-repeat: no-repeat;}
+#home-icons .ibm-columns .ibm-col-5-1 a{
+	display: block;
+	padding:0px 0px 0px 0px;
+	text-decoration: none;
+	text-align:center;
+	color:#555555;
+	font-size: 24px;font-weight: bold;}
+#home-icons .ibm-columns .ibm-col-5-1 a span {
+	display: block;
+    height: 120px;
+    margin-bottom: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;position:relative;}
+.ibm-topic-links-overview span:before{
+    content: url("/ibmweb/image/v18std-hp_overview_tail.png");
+    left: -41px;
+    position:absolute;}
+.ibm-topic-links-overview span {background-image: url("/ibmweb/image/v18std-hp_overview_off.png");}
+.ibm-topic-links-overview span:hover{background-image: url("/ibmweb/image/v18std-hp_overview_on.png");}
+.ibm-topic-links-patterns span{background-image: url("/ibmweb/image/v18std-hp_patterns_off.png");}
+.ibm-topic-links-patterns span:hover{background-image: url("/ibmweb/image/v18std-hp_patterns_on.png");}
+.ibm-topic-links-tools span{background-image: url("/ibmweb/image/v18std-hp_tools_off.png");}
+.ibm-topic-links-tools span:hover{background-image: url("/ibmweb/image/v18std-hp_tools_on.png");}
+.ibm-topic-links-resources span{background-image: url("/ibmweb/image/v18std-hp_resources_off.png");}
+.ibm-topic-links-resources span:hover{background-image: url("/ibmweb/image/v18std-hp_resources_on.png");}
+.ibm-topic-links-a-z span{background-image: url("/ibmweb/image/v18std-hp_index_off.png");}
+.ibm-topic-links-a-z span:hover{background-image: url("/ibmweb/image/v18std-hp_index_on.png");}
+/*TopLinks menus Ends Here */
+
+/* IE 7 */
+.dj_ie7 .ibm-home-search input[type="button"] {
+    background-color: transparent;
+    background-image: url("/ibmweb/image/v18std-ibm-search-icon-home.png");
+    background-repeat: no-repeat;
+    border: 1px none #999;
+    cursor: pointer;
+    margin: 0 0 0 7px;
+    padding: 2px 0 17px 0px;
+    width: 36px; }
+ #home-icons .ibm-columns .ibm-col-1-1 .ibm-col-5-1 a{
+	font-size: 24px !important;
+	line-height: 30px !important;}
+.dj_ie7 .ibm-cdds-page #ibm-content #ibm-content-main h2 a{
+	font-size: 23px !important;
+    font-weight: bolder;}
+.dj_ie7 .ibm-cdds-page #ibm-content #ibm-content-main p, .dj_ie7 .ibm-cdds-page #ibm-content #ibm-content-main li{
+    line-height: 26px;
+    text-shadow: none;
+    font-size: 16px;}
+.dj_ie7 .ibm-cdds-page #ibm-content #ibm-content-main li a{
+    text-shadow: none;
+    font-size: 16px;
+    line-height:20px !important;}
+.dj_ie7 .ibm-cdds-page Li A[class*='-link']  {
+	background-image:none !important;
+	font-size:1.4em !important;}
+.dj_ie7 .ibm-cdds-page #small-header-menus h2 a{
+	line-height: 47px !important;
+	font-size:25px;
+	text-decoration: none;}
+.dj_ie7 #home { margin: 0px auto 0px !important;}
+ .dj_ie7 #resources, .dj_ie7 #tools, .dj_ie7 #patterns {
+	padding-top:0px;
+	margin-top: 0px !important;}
+ .dj_ie7 .ibm-cdds-page input[type=text]::-ms-clear {
+	width : 0px;
+	height: 0px;}
+/* IE 7 */
+
+
+
+/* MEDIA QUERIES STARTS */
+
+@media only screen and  (min-width : 801px) and  (max-width : 1100px) {
+.ibm-cdds-page #ibm-top, .ibm-cdds-page .ibm-columns, .ibm-cdds-page .ibm-col-1-1, .ibm-cdds-page .ibm-col-4-2{
+	min-width:200px !important;
+	width:auto !important;}
+.buttom-size {
+    margin-bottom: 69px;}
+.ibm-cdds-page #overlay-2 .ibm-body .ibm-main .ibm-title h2 {
+    padding: 20px 45px;}
+.ibm-cdds-page .ibm-columns{padding: 0 26px !important;}
+.ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1 {
+    margin: 18px 0 10px;
+    padding-top: 10px;}
+.ibm-home-search { margin: 20px auto 44px;}
+#home-icons .ibm-columns .ibm-col-5-1 {
+    margin-bottom: 75px;
+    margin-top: 70px;}
+#home-icons .ibm-columns .ibm-col-5-1 a span {
+	display: block;
+    height: 96px;
+    margin-bottom: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96px;position:relative;}
+.ibm-topic-links-overview span:before{
+    content: url("/ibmweb/image/v18std-hp_tablet_overview_tail.png");
+    left: -34px;
+    position:absolute;}
+.ibm-topic-links-overview span{background-image: url("/ibmweb/image/v18std-hp_tablet_overview_off.png");}
+.ibm-topic-links-overview span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_overview_on.png");} */
+.ibm-topic-links-overview span {background-image: url("/ibmweb/image/v18std-hp_tablet_overview_off.png");}
+.ibm-topic-links-patterns span{background-image: url("/ibmweb/image/v18std-hp_tablet_patterns_off.png");}
+.ibm-topic-links-patterns span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_patterns_on.png");}
+.ibm-topic-links-tools span{background-image: url("/ibmweb/image/v18std-hp_tablet_tools_off.png");}
+.ibm-topic-links-tools span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_tools_on.png");}
+.ibm-topic-links-resources span{background-image: url("/ibmweb/image/v18std-hp_tablet_resources_off.png");}
+.ibm-topic-links-resources span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_resources_on.png");}
+.ibm-topic-links-a-z span{background-image: url("/ibmweb/image/v18std-hp_tablet_index_off.png");}
+.ibm-topic-links-a-z span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_index_on.png");}
+#home-icons .ibm-col-5-1 {width:17%;}
+.ibm-cdds-page .ibm-col-4-1 {width:45% !important;}
+#ibm-purple-background .ibm-columns .ibm-col-6-2 { width:auto;}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 p { font-size: 19px; line-height: 26px;}
+#small-header-menus h2 {float: none; margin: 2px 0 0;padding:0px;}
+#small-header-menus h2 a {float: none;}
+#small-header-menus .section-search {
+    margin: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
+    width:50%;}
+#search { width: 89%;}
+#small-header-menus ul {
+    margin: -19px auto 0px;
+    padding:0px 24px 0px 0px;
+    width: 321px;
+    height:75px;}
+#small-header-menus ul li{
+	overflow: visible;
+	margin-top:0px;}
+#small-header-menus ul li a{
+	font-size:12px;}
+.ibm-menu-a-z { margin-right: 0 !important;}
+
+}
+
+
+@media only screen and (min-width : 601px) and (max-width : 800px)  {
+.ibm-cdds-page #ibm-top, .ibm-cdds-page .ibm-columns, .ibm-cdds-page .ibm-col-1-1, .ibm-cdds-page .ibm-col-4-2{
+	min-width:200px !important;
+	width:auto !important;}
+.ibm-cdds-page #overlay-2 .ibm-body .ibm-main .ibm-title h2 {
+    padding: 20px 45px;}
+.ibm-cdds-page .ibm-columns{padding: 0 26px !important;}
+.ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1 {
+    margin: 8px 0 2px;
+    padding-top: 10px;}
+.ibm-home-search { margin: 28px auto 48px;}
+#home-icons .ibm-columns .ibm-col-5-1 {
+    margin-bottom: 69px;
+    margin-top: 70px;}
+#home-icons .ibm-columns .ibm-col-5-1 a {font-size: 18px;}
+#home-icons .ibm-columns .ibm-col-5-1 a span {
+	display: block;
+    height: 96px;
+    margin-bottom: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96px;position:relative;}
+.ibm-topic-links-overview span:before{
+    content: url("/ibmweb/image/v18std-hp_tablet_overview_tail.png");
+    left: -34px;
+    position:absolute;}
+.ibm-topic-links-overview span{background-image: url("/ibmweb/image/v18std-hp_tablet_overview_off.png");}
+.ibm-topic-links-overview span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_overview_on.png");}
+.ibm-topic-links-patterns span{background-image: url("/ibmweb/image/v18std-hp_tablet_patterns_off.png");}
+.ibm-topic-links-patterns span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_patterns_on.png");}
+.ibm-topic-links-tools span{background-image: url("/ibmweb/image/v18std-hp_tablet_tools_off.png");}
+.ibm-topic-links-tools span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_tools_on.png");}
+.ibm-topic-links-resources span{background-image: url("/ibmweb/image/v18std-hp_tablet_resources_off.png");}
+.ibm-topic-links-resources span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_resources_on.png");}
+.ibm-topic-links-a-z span{background-image: url("/ibmweb/image/v18std-hp_tablet_index_off.png");}
+.ibm-topic-links-a-z span:hover{background-image: url("/ibmweb/image/v18std-hp_tablet_index_on.png");}
+.ibm-cdds-page #home h1 {font-size: 43px !important;}
+#home-icons .ibm-col-5-1 { width:16%;}
+.ibm-cdds-page .ibm-col-4-1 { width:45% !important;}
+#ibm-purple-background .ibm-columns .ibm-col-6-2 { width:auto;}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 p { font-size: 19px; line-height: 26px;}
+#small-header-menus h2 { float: none; margin: 2px 0 0;}
+#small-header-menus h2 a { float: none;}
+#small-header-menus .section-search {
+    float: left;
+    margin: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
+    width:39%;}
+#search {  width: 77%;}
+#small-header-menus ul {
+    float: right;
+    margin: 0 auto;
+    padding:0px 0px 0px 0px;
+    width: 321px;
+    height:75px;}
+#small-header-menus ul li{
+	overflow: visible;
+	margin-top:0px;}
+#small-header-menus ul li a{font-size:12px;}
+.ibm-menu-a-z { margin-right: 0 !important;}
+.ibm-home-search input[type="text"] {
+    padding: 9px 10px 9px 55px;
+    width: 446px;
+}
+.ibm-home-search input[type="button"] { background-size: 72% auto;}
+
+}
+
+@media only screen and (min-width : 481px) and (max-width : 600px)  {
+.ibm-cdds-page #home h1 { font-size: 34px !important;}
+.ibm-home-search input[type="text"] {
+    border: medium none;
+    border-radius: 0;
+    color: #ccc;
+    font-size: 1.5em !important;
+    font-weight: normal;
+    height: auto !important;
+    padding: 10px 0px 10px 50px;
+    width: 75%;}
+.ibm-cdds-page #ibm-top, .ibm-cdds-page .ibm-columns, .ibm-cdds-page .ibm-col-1-1, .ibm-cdds-page .ibm-col-4-2{
+	min-width:200px !important;
+	width:auto !important;}
+.ibm-cdds-page #overlay-2 .ibm-body .ibm-main .ibm-title h2 {padding: 20px 45px;}
+.ibm-cdds-page .ibm-columns{padding: 0 26px !important;}
+.ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1 {
+    margin: 15px 0 2px;
+    padding-top: 10px;}
+.ibm-home-search {margin: 28px auto 48px;}
+#home-icons .ibm-columns .ibm-col-5-1 {
+    margin-bottom: 69px;
+    margin-top: 70px;}
+#home-icons .ibm-columns .ibm-col-5-1 a span {
+	display: block;
+    height: 60px;
+    margin-bottom: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;position:relative;}
+.ibm-topic-links-overview span:before{
+    content: url("/ibmweb/image/v18std-hp_mobile_overview_tail.png");
+    left: -22px;
+    position:absolute;}
+.ibm-topic-links-overview span{background-image: url("/ibmweb/image/v18std-hp_mobile_overview_off.png");}
+.ibm-topic-links-overview span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_overview_on.png");}
+.ibm-topic-links-patterns span{background-image: url("/ibmweb/image/v18std-hp_mobile_patterns_off.png");}
+.ibm-topic-links-patterns span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_patterns_on.png");}
+.ibm-topic-links-tools span{background-image: url("/ibmweb/image/v18std-hp_mobile_tools_off.png");}
+.ibm-topic-links-tools span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_tools_on.png");}
+.ibm-topic-links-resources span{background-image: url("/ibmweb/image/v18std-hp_mobile_resources_off.png");}
+.ibm-topic-links-resources span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_resources_on.png");}
+.ibm-topic-links-a-z span{background-image: url("/ibmweb/image/v18std-hp_mobile_index_off.png");}
+.ibm-topic-links-a-z span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_index_on.png");}
+
+#home-icons .ibm-col-5-1 {width:15%;}
+#home-icons .ibm-columns .ibm-col-5-1 a {font-size: 12px;}
+.ibm-cdds-page .ibm-col-4-1 { width:65% !important;}
+#ibm-purple-background .ibm-columns .ibm-col-6-2 { width:auto;}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 p {
+    font-size: 19px;
+    line-height: 26px;}
+#small-header-menus h2 {
+    float: none;
+    margin: 2px 0 0;}
+#small-header-menus h2 a {float: none;}
+#small-header-menus .section-search {
+    float: left;
+    margin: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
+    width:41%;}
+#search { width: 80%;}
+#small-header-menus ul {
+    float: right;
+    margin: 0 auto;
+    padding:0px 0px 0px 0px;
+    width: 277px;
+    height:75px;}
+#small-header-menus ul li{
+	overflow: visible;
+	margin-top:0px;
+	margin-right:0px;}
+#small-header-menus ul li a{ font-size:12px;}
+.ibm-menu-a-z { margin-right: 0 !important;}
+}
+
+@media only screen and (max-width : 480px)  {
+	
+#home { min-height: 128px; padding-top: 8px !important;}
+#ibm-com { margin-top: 1px !important;}
+.ibm-cdds-page .ibm-common-overlay, .ibm-cdds-page .ibm-overlay-alt{width:auto !important;}
+.ibm-cdds-page #overlay-2 .ibm-body .ibm-main .ibm-title h2 {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 15px 15px;}
+#home-icons .ibm-columns .ibm-col-5-1 a span {
+	display: block;
+    height: 60px;
+    margin-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;position:relative;}
+.ibm-topic-links-overview span:before{
+    content: url("/ibmweb/image/v18std-hp_mobile_overview_tail.png");
+    left: -22px;
+    position:absolute;}
+.ibm-topic-links-overview span{background-image: url("/ibmweb/image/v18std-hp_mobile_overview_off.png");}
+.ibm-topic-links-overview span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_overview_on.png");}
+.ibm-topic-links-patterns span{background-image: url("/ibmweb/image/v18std-hp_mobile_patterns_off.png");}
+.ibm-topic-links-patterns span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_patterns_on.png");}
+.ibm-topic-links-tools span{background-image: url("/ibmweb/image/v18std-hp_mobile_tools_off.png");}
+.ibm-topic-links-tools span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_tools_on.png");}
+.ibm-topic-links-resources span{background-image: url("/ibmweb/image/v18std-hp_mobile_resources_off.png");}
+.ibm-topic-links-resources span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_resources_on.png");}
+.ibm-topic-links-a-z span{background-image: url("/ibmweb/image/v18std-hp_mobile_index_off.png");}
+.ibm-topic-links-a-z span:hover{background-image: url("/ibmweb/image/v18std-hp_mobile_index_on.png");}
+
+.ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1 { padding-top: 0px;}
+.ibm-cdds-page #home h1 { font-size: 22px !important;}
+.ibm-cdds-page #home h3 { font-size: 17px !important; margin: 0px 0 0;}
+.ibm-home-search {margin: 5px auto 0; width:92%;}
+.ibm-home-search input[type="text"] {
+    font-size: 16pt !important;
+    width: 82%;
+    float:left;
+    padding: 2px 10px 2px 30px;}
+#home-icons .ibm-columns .ibm-col-5-1 {
+    margin: 0px 0 15px 15px;
+    width:28.33% !important;}
+#home-icons .ibm-columns .ibm-col-5-1 a{font-size:14px;}
+.ibm-home-search input[type="button"] {
+    background-image: url("/ibmweb/image/v18std-ibm-search-icon-home.png");
+    background-size: 95% auto;
+    float: left;
+    margin-top: -3px;
+    padding: 5px 0;
+    position: absolute;
+    width: 25px;}
+.ibm-home-search input[type="button"]:hover {
+	background-image: url("/ibmweb/image/v18std-ibm-search-icon-home.png");
+    background-size: 95% auto;
+    background-repeat: no-repeat;}
+#small-header-menus{
+	margin: 0px auto;
+	padding:0px;}
+#small-header-menus ul{
+	height: 90px;
+    width: 310px;
+    padding-left: 10px;
+    float: none;
+    margin: 0 auto;}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 p {
+    font-size: 17px;
+    line-height: 25px;}
+#small-header-menus ul li{
+    overflow: visible;
+    height:68px;
+    margin: 29px 5px 21px 0;}
+#small-header-menus ul li:hover{
+	height:68px; 
+	-webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+    overflow: visible;} 
+#small-header-menus ul li a{font-size: 11px;}
+#search { width: 84%;}
+.section-search input[type="text"] {
+    font-size: 19px;
+    height: auto !important;
+    padding: 6px 5px 6px 36px;
+    height: auto !important;
+    margin-left: 0px;
+    float: left;}
+#small-header-menus .section-search {
+    float: none;
+    margin: 1px auto 0;
+    padding: 0 0 0px;
+    width: 300px;
+    overflow: auto;}
+h2.section-header { font-size: 34px !important;}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 h2{
+    font-size: 18px;
+    font-weight: bold;}
+#small-header-menus h2{text-align: center;}
+#small-header-menus h2 a {
+    float: none;
+    margin: 2px 0px 0px 0px;
+    padding: 10px 0 7px;
+    font-size: 25px;}
+#patterns .ibm-link-list li { float: left; width: 25px;}
+#patterns .ibm-link-list li a {
+    display: block;
+    font-size: 20px;
+    padding: 5px;}
+.section-search input[type="button"] { margin: 5px 0px;}
+.ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1:not(.section-header){
+	margin:21px auto 16px;}
+.ibm-cdds-page .ibm-band .ibm-columns .ibm-col-1-1 h1 {
+    font-size: 29px !important;
+    margin: 0px 0 0px;
+    padding:0px !important;}
+#home-icons .ibm-columns{
+	width:auto;
+	margin-top: 60px;}
+}
+#home-icons {
+    min-height: 250px;
+}
+#ibm-purple-background .ibm-columns .ibm-col-1-1 img { margin: 7px 0 0;}
+/* MEDIA QUERIES ENDS */
