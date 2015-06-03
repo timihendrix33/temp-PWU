@@ -20,8 +20,10 @@ App
     'gray':                   '#dde6e9',
     'gray-light':             '#e4eaec',
     'gray-lighter':           '#edf1f2',
-    'havas':                   '#E6262B',
-    'blue':                   '#4687e9'
+    'blue':                   '#4687e9',
+    'ibm-blue':               '#00b2ef',
+    'ibm-dark-grey':          '#6a6a6a',
+    'ibm-background':         '#f4f4f4'
   })
   .constant('APP_MEDIAQUERY', {
     'desktopLG':             1200,
@@ -42,6 +44,7 @@ App
                              'vendor/fontawesome/css/font-awesome.min.css',
                              'vendor/simple-line-icons/css/simple-line-icons.css',
                              'vendor/weather-icons/css/weather-icons.min.css'],
+      'fontawesome'         ['vendor/fontawesome/css/font-awesome.min.css'],
       'sparklines':         ['app/vendor/sparklines/jquery.sparkline.min.js'],
       'wysiwyg':            ['vendor/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
                              'vendor/bootstrap-wysiwyg/external/jquery.hotkeys.js'],

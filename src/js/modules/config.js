@@ -22,14 +22,14 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         url: '/',
         controller: 'AppController',
         templateUrl: helper.basepath('app.html'),
-        resolve: helper.resolveFor('fastclick', 'modernizr', 'icons','slimscroll', 'classyloader')
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
     .state('detail', {
         url: '/detail',
         controller: 'AppController',
         templateUrl: helper.basepath('detail.html'),
-        resolve: helper.resolveFor('fastclick', 'modernizr', 'icons','slimscroll', 'classyloader')
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
     // 
