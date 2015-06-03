@@ -1,0 +1,98 @@
+#courseDetail{
+	margin:auto;
+	background: #fff;
+	color:#555555;
+	.courseNav{
+		background: $ibm-blue;
+		@include border-radius(5px 5px 0 0);
+		color:#fff;
+		padding:2rem 1rem;
+		.title{
+			float: left;
+			padding:10px 0;
+		}
+		.time{
+			padding:10px 0;
+			float: right;
+			text-align: right;
+		}
+		.chapters{
+			clear:both;
+			ul{
+				@include clearfix();
+			}
+			li{
+				display: inline-block;
+				list-style: none;
+				width:19%;
+				padding:0;
+				margin:0;
+				a.fa{
+					border:1px solid #fff;
+					@include border-radius(5rem);
+					  font-size: 1.5rem;
+					  padding: 0.5rem .7rem;
+					  background:$ibm-blue;
+					  &:hover,&.complete{
+					  	&:before{
+						  	color:$ibm-blue;
+						  }
+					  	background: #fff;
+					  }
+					  &:hover,&:active,&:focus{
+					  	text-decoration: none;
+					  }
+					  .fa-check{
+					  	padding:0.5rem;
+					  }
+				}
+				&:before{
+					display:none;
+				}
+				&:after{
+					content:" ";
+					display: block;
+					background: #fff;
+					height: 1px;
+					width:100%;
+					margin-top: -1em;
+				};
+			}
+		}
+		.tools{
+			color:$ibm-dark-grey;
+		}
+	}
+	.tags{
+		padding:.5em 0;
+	}
+	.tag{
+		@include border-radius(3em);
+		padding:.5em 1em;
+		margin-right:1em;
+		border:2px solid;
+		display: inline-block;
+		&:last-child{
+			margin-right:0;
+		}
+	}
+	.detail{
+		background: #fff;
+		margin:2em auto;
+		padding-top:2em;
+		padding-bottom:2em;
+		@include cardBottom();
+		@include clearfix();
+	}
+	.extraDetails{
+		.ratings{
+			display: block;
+		}
+		.profilePic{
+			float: left;
+			img{
+				@include border-radius(100%);
+			}
+		}
+	}
+}

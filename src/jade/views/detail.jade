@@ -1,0 +1,87 @@
+div(ng-controller="courseDetailController")#courseDetail
+	div.courseNav.clearfix
+		h1.title.col-md-6 Cloud Defined
+		span.time.col-md-6 {{timeLeft}}
+		div.chapters.col-md-8
+			ul
+				li(ng-repeat="c in courseDetails.chapters")
+					a.fa(href="#chapter-{{$index}}" ng-class="c.class")
+		div.addnote.col-md-4
+
+	div.col-md-12
+		div(data-widget="videoplayer" data-videoid="1_uuyyfek6" data-videotype="kaltura")
+			div#ibm-dynid-18_playercontainer
+				a.ibm-video-placeholder(href="#")
+					span.ibm-video-play
+					img(src="v18SourceCode/Kaltura-video-player_files/580" width="100%" height="100%" alt="Kaltura Education Video Solutions")
+					span.ibm-video-duration 01:40
+		.tools.col-md-4.pull-right
+			a.fa.fa-bookmark-o bookmark
+			a.fa.fa-arrow-circle-o-down Download
+			a.fa.fa-file-o Transcript
+			a.fa.fa-envelope-o Email
+	.col-md-12
+		.detail
+			.col-md-8
+				h2 Description:
+
+					p
+						span.instructor {{courseDetails.instructor.name}}
+						span.updated Updated 2/2014
+					p.description
+					| Greak Text
+				h2 Roadmaps:
+					a.roadmap IBM Cloud Readiness Roadmap
+				.tags
+					h2 Related Tags:
+					a.tag(ng-repeat="(tag, link)  in courseDetails.relatedTags" ng-href="{{link}}") {{tag}}
+
+				.notes
+					ul
+						li
+							a(href="#notes") Teachers Notes
+						li(href="#resources")
+							a Resources
+					#notes
+						| Greek Text about Notes
+						a(href="#more") Read More
+					#resources
+						| Greek Text about Resources
+						a(href="#more") Read More
+
+
+			.extraDetails.col-md-4
+				h2.wylearn What You Learn
+					ul
+						li What is Cloud?
+						li How to write basic HTML
+						li Hto to upload files
+						li How to style web pages
+				.rating
+					h2 Average Rating
+					span.fa(ng-repeat="star in courseDetails.rating.stars" ng-class="{'fa-star blueText': star == 1, 'fa-star-half-o blueText':  star == .5, 'fa-star-o': star == 0}")
+					span.ratings {{ courseDetails.rating.text }}
+				.instructorDetail
+					h2 About the Instructor
+					span.profilePic
+						img(ng-src="{{courseDetails.instructor.image}}")
+					.info
+						.name {{courseDetails.instructor.name}}
+						.title {{courseDetails.instructor.title}}
+						.email 
+							a(href="mailto:{{courseDetails.instructor.email}}" target="_blank") Ask a Question
+					.description.clearfix
+					| Greek Text
+	.relatedContent.col-md-12(ng-show="courseDetails.relatedContent")
+		h2 Related Content:
+	.col-md-12.no-gutters
+		.col-md-6(ng-repeat="card in courseDetails.relatedContent")
+			.card(class="{{card.catagory.toLowerCase()}}")
+				h3 {{card.title}}
+					span.difficulty.easy
+				.content
+					p.catagory Course Catagory: {{card.catagory}}
+					p.description {{card.description}}
+					.tags
+						a.tag(ng-repeat="tag in card.tags" ng-href="{{tag.link}}") {{tag.name}}
+

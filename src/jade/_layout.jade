@@ -1,0 +1,17 @@
+doctype strict
+html(lang="en", data-ng-app="pwu")
+
+	head
+		include ./views/partials/_head
+
+	body#ibm-com.ibm-type.ibm-cdds-page.v17(aria-busy='false')
+		include ./views/partials/_nav
+
+		.wrapper.container
+			block main-content
+
+		include ./views/partials/_footer
+
+		include ./views/partials/_scripts
+
+

@@ -1,0 +1,73 @@
+/*!
+ * 
+ * Angle - Bootstrap Admin App
+ * 
+ * Author: @themicon_co
+ * Website: http://themicon.co
+ * License: http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses
+ * 
+ */
+@import "compass/css3";
+// Override bootstrap variables
+@import "app/variables";
+
+// Bootstrap
+@import "bootstrap/bootstrap";
+
+// Global definition of media queries
+@import "app/media-queries";
+// Utilities 
+@import "app/utils-definitions";
+
+// Bootstrap reset
+@import "app/bootstrap-reset";
+
+
+// IBM v18
+@import "v18/application";
+
+// IBM PW
+@import "pw/variables";
+@import "pw/fonts";
+@import "pw/mixins";
+@import "pw/cards";
+
+body.ibm-type{
+    font-family:"HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial;
+    font-size: 16px;
+    color:#222;
+    background-color:$ibm-background;
+}
+footer{
+    padding: 2em;
+}
+.ibm-type{
+	a {
+		color: inherit;
+	}
+	h1,h2,h2,h4,h5{
+		font-weight: normal;
+	}
+	h2{
+		font-size: 1.2em;
+		@include useLubalinGraphStdBookIBM()
+	}
+}
+.wrapper{
+	@include clearfix();
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+.blueText{
+	color: $ibm-blue;
+}
+@import "pw/pages/courseDetail";

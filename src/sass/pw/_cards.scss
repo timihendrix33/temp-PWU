@@ -1,0 +1,22 @@
+.card{
+	width:100%;
+	padding:0;
+	margin:0;
+	background: #fff;
+	@include cardBottom();
+	h3{
+		padding-top:1em;
+		padding-bottom:1em;
+		span{
+
+		}
+	}
+	.details{
+		
+	}
+	&.cloud{
+		h3{
+			background:$ibm-blue;
+		}
+	}
+}

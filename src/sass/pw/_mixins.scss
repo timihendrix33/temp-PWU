@@ -1,0 +1,4 @@
+@mixin cardBottom{		
+	@include box-shadow(-2px 6px 5px -5px rgba(0,0,0,0.58));
+	@include border-radius(0 0 5px 5px);
+}
