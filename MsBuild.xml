@@ -1,0 +1,111 @@
+<Project DefaultTargets="Run" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v11.0\WebApplications\Microsoft.WebApplication.targets" />
+	<Import Project="$(MSBuildExtensionsPath)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks"/>
+	
+	<UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v11.0\Web\Microsoft.Web.Publishing.Tasks.dll"/>  
+
+	<PropertyGroup>
+		<TransformConfigFiles>true</TransformConfigFiles>
+		<AutoParameterizationWebConfigConnectionStrings>false</AutoParameterizationWebConfigConnectionStrings>
+		<!--BindingHostDomainSuffix>tech.ny.havasww.com</BindingHostDomainSuffix-->
+		<WebSiteUrl>$(SiteName).$(Environment).$(BindingHostDomainSuffix)</WebSiteUrl>	
+		<!--RuntimeVersion>v4.0</RuntimeVersion-->
+		<WebSiteName>$(SiteName)-$(Environment)</WebSiteName>
+		<AppPoolName>$(SiteName)-$(Environment)</AppPoolName>
+	</PropertyGroup>
+		
+
+	<Target Name="Run">
+		<ItemGroup>
+			<ProjectReferences Include="$(WebsiteRootDir)\*.*proj" />
+		</ItemGroup>
+
+		<!-- Get the full path of the web site root directory -->
+		<ConvertToAbsolutePath Paths="$(WebsiteRootDir)">
+			<Output TaskParameter="AbsolutePaths" PropertyName="FullProjectFolderPath"/>
+		</ConvertToAbsolutePath>
+
+		<!-- Get the full path of the web deploy package destination directory -->
+		<ConvertToAbsolutePath Paths="$(WebsiteRootDir)">
+			<Output TaskParameter="AbsolutePaths" PropertyName="FullDeployFolderPath"/>
+		</ConvertToAbsolutePath>
+	
+		<!-- Check if App Pool already exists -->
+		<MSBuild.ExtensionPack.Web.Iis7AppPool TaskAction="CheckExists" Name="$(AppPoolName)">
+			<Output PropertyName="AppPoolExist" TaskParameter="Exists"/>
+		</MSBuild.ExtensionPack.Web.Iis7AppPool>
+		<Message Text="AppPool Exists: $(AppPoolExist)"/>
+
+		<!-- Check if web site already exists -->
+		<MSBuild.ExtensionPack.Web.Iis7Website TaskAction="CheckExists" Name="$(WebSiteName)">
+			<Output PropertyName="WebSiteExist" TaskParameter="Exists"/>
+		</MSBuild.ExtensionPack.Web.Iis7Website>
+		<Message Text="Web Site Exists: $(WebSiteExist)"/>
+
+		<!-- Delete the web site if existing -->
+		<MSBuild.ExtensionPack.Web.Iis7Website TaskAction="Delete" Name="$(WebSiteName)" Condition="'$(WebSiteExist)' == 'true'" />
+
+		<!-- Delete the existing App Pool -->
+		<MSBuild.ExtensionPack.Web.Iis7AppPool TaskAction="Delete" Name="$(AppPoolName)" Condition="'$(AppPoolExist)' == 'true'" />
+		
+		<!-- Create app pool if not exist -->
+		<MSBuild.ExtensionPack.Web.Iis7AppPool TaskAction="Create" Name="$(AppPoolName)" ManagedRuntimeVersion="$(RuntimeVersion)" />
+
+		<!-- Create web site if not exist -->
+		<MSBuild.ExtensionPack.Web.Iis7Website 
+			TaskAction="Create" 
+			Name="$(WebSiteName)" 
+			AppPool="$(AppPoolName)"
+			Path="$(FullDeployFolderPath)" 
+			Port="80" 
+			ServerAutoStart="true" 
+		>
+			<Output TaskParameter="SiteId" PropertyName="WebSiteId"/>    
+		</MSBuild.ExtensionPack.Web.Iis7Website>		
+
+		<!-- Remove the Default Binding -->
+		<MSBuild.ExtensionPack.Web.Iis7Binding
+			TaskAction="Remove"
+			Name="$(WebSiteName)"
+			BindingInformation="*:80:"
+			BindingProtocol="http"
+		/>    	
+	
+		<!-- Remove the old binding if existing -->
+		<MSBuild.ExtensionPack.Web.Iis7Binding
+			TaskAction="Remove"
+			Name="$(WebSiteName)"
+			BindingInformation=":80:$(WebSiteUrl)"
+			BindingProtocol="http"
+		/>    
+		  
+		<!-- Remove the old https binding if existing -->
+		<MSBuild.ExtensionPack.Web.Iis7Binding
+			TaskAction="Remove"
+			Name="$(WebSiteName)"
+			BindingInformation=":443:$(WebSiteUrl)"
+			BindingProtocol="https"
+		/>
+
+		<!-- Create Binding -->
+		<MSBuild.ExtensionPack.Web.Iis7Binding
+			TaskAction="Add"
+			Name="$(WebSiteName)"
+			BindingInformation=":80:$(WebSiteUrl)"
+			BindingProtocol="http"
+		/>
+
+		<!-- Create https Binding -->
+		<MSBuild.ExtensionPack.Web.Iis7Binding
+			TaskAction="Add"
+			Name="$(WebSiteName)"
+			BindingInformation=":443:$(WebSiteUrl)"
+			BindingProtocol="https"
+		/>
+      
+		
+
+	  
+  </Target>
+
+</Project>
