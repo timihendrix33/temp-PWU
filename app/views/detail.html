@@ -1,0 +1,101 @@
+<div ng-controller="courseDetailController" id="courseDetail">
+   <div class="courseNav clearfix">
+      <h1 class="title col-md-6">Cloud Defined</h1>
+      <span class="time col-md-6">{{timeLeft}}</span>
+      <div class="chapters col-md-8">
+         <ul>
+            <li ng-repeat="c in courseDetails.chapters">
+               <a href="#chapter-{{$index}}" ng-class="c.class" class="fa"></a>
+            </li>
+         </ul>
+      </div>
+      <div class="addnote col-md-4"></div>
+   </div>
+   <div class="col-md-12">
+      <div data-widget="videoplayer" data-videoid="1_uuyyfek6" data-videotype="kaltura">
+         <div id="ibm-dynid-18_playercontainer">
+            <a href="#" class="ibm-video-placeholder">
+               <span class="ibm-video-play"></span>
+               <img src="v18SourceCode/Kaltura-video-player_files/580" width="100%" height="100%" alt="Kaltura Education Video Solutions" />
+               <span class="ibm-video-duration">01:40</span>
+            </a>
+         </div>
+      </div>
+      <div class="tools col-md-4 pull-right"><a class="fa fa-bookmark-o">bookmark</a><a class="fa fa-arrow-circle-o-down">Download</a><a class="fa fa-file-o">Transcript</a><a class="fa fa-envelope-o">Email</a>
+      </div>
+   </div>
+   <div class="col-md-12">
+      <div class="detail">
+         <div class="col-md-8">
+            <h2>Description:
+               <p>
+                  <span class="instructor">{{courseDetails.instructor.name}}</span>
+                  <span class="updated">Updated 2/2014</span>
+               </p>
+               <p class="description"></p>Greak Text</h2>
+            <h2>Roadmaps:<a class="roadmap">IBM Cloud Readiness Roadmap</a>
+            </h2>
+            <div class="tags">
+               <h2>Related Tags:</h2><a ng-repeat="(tag, link)  in courseDetails.relatedTags" ng-href="{{link}}" class="tag">{{tag}}</a>
+            </div>
+            <div class="notes">
+               <ul>
+                  <li><a href="#notes">Teachers Notes</a>
+                  </li>
+                  <li href="#resources"><a>Resources</a>
+                  </li>
+               </ul>
+               <div id="notes">Greek Text about Notes<a href="#more">Read More</a>
+               </div>
+               <div id="resources">Greek Text about Resources<a href="#more">Read More</a>
+               </div>
+            </div>
+         </div>
+         <div class="extraDetails col-md-4">
+            <h2 class="wylearn">What You Learn
+               <ul>
+                  <li>What is Cloud?</li>
+                  <li>How to write basic HTML</li>
+                  <li>Hto to upload files</li>
+                  <li>How to style web pages</li>
+               </ul>
+            </h2>
+            <div class="rating">
+               <h2>Average Rating</h2>
+               <span ng-repeat="star in courseDetails.rating.stars" ng-class="{'fa-star blueText': star == 1, 'fa-star-half-o blueText':  star == .5, 'fa-star-o': star == 0}" class="fa"></span>
+               <span class="ratings">{{ courseDetails.rating.text }}</span>
+            </div>
+            <div class="instructorDetail">
+               <h2>About the Instructor</h2>
+               <span class="profilePic">
+                  <img ng-src="{{courseDetails.instructor.image}}" />
+               </span>
+               <div class="info">
+                  <div class="name">{{courseDetails.instructor.name}}</div>
+                  <div class="title">{{courseDetails.instructor.title}}</div>
+                  <div class="email"> <a href="mailto:{{courseDetails.instructor.email}}" target="_blank">Ask a Question</a>
+                  </div>
+               </div>
+               <div class="description clearfix"></div>Greek Text</div>
+         </div>
+      </div>
+   </div>
+   <div ng-show="courseDetails.relatedContent" class="relatedContent col-md-12">
+      <h2>Related Content:</h2>
+   </div>
+   <div class="col-md-12 no-gutters">
+      <div ng-repeat="card in courseDetails.relatedContent" class="col-md-6">
+         <div class="card {{card.catagory.toLowerCase()}}">
+            <h3>{{card.title}}
+               <span class="difficulty easy"></span>
+            </h3>
+            <div class="content">
+               <p class="catagory">Course Catagory: {{card.catagory}}</p>
+               <p class="description">{{card.description}}</p>
+               <div class="tags"><a ng-repeat="tag in card.tags" ng-href="{{tag.link}}" class="tag">{{tag.name}}</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
