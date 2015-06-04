@@ -1,27 +1,29 @@
 <div ng-controller="courseDetailController" id="courseDetail">
    <div class="courseNav clearfix">
       <h1 class="title col-md-6">Cloud Defined</h1>
-      <span class="time col-md-6">{{timeLeft}}</span>
-      <div class="chapters col-md-8">
+      <div class="col-md-6 pull-right">
+         <span class="type">{{courseDetails.format}}</span>
+         <span class="time">{{courseDetails.timeStats.timeSpent}} mins</span>
+      </div>
+      <div class="chapters col-xs-10">
          <ul>
             <li ng-repeat="c in courseDetails.chapters">
-               <a href="#chapter-{{$index}}" ng-class="c.class" class="fa"></a>
+               <a href="#chapter-{{$index}}" ng-class="c.class" tooltip-placement="bottom" tooltip="{{c.tip}}" class="fa"></a>
             </li>
          </ul>
       </div>
-      <div class="addnote col-md-4"></div>
-   </div>
-   <div class="col-md-12">
-      <div data-widget="videoplayer" data-videoid="1_uuyyfek6" data-videotype="kaltura">
-         <div id="ibm-dynid-18_playercontainer">
-            <a href="#" class="ibm-video-placeholder">
-               <span class="ibm-video-play"></span>
-               <img src="v18SourceCode/Kaltura-video-player_files/580" width="100%" height="100%" alt="Kaltura Education Video Solutions" />
-               <span class="ibm-video-duration">01:40</span>
-            </a>
-         </div>
+      <div class="addnote col-xs-2">
+         <add-note></add-note>
       </div>
-      <div class="tools col-md-4 pull-right"><a class="fa fa-bookmark-o">bookmark</a><a class="fa fa-arrow-circle-o-down">Download</a><a class="fa fa-file-o">Transcript</a><a class="fa fa-envelope-o">Email</a>
+   </div>
+   <div class="col-md-12 no-gutters">
+      <div id="ibm-dynid-18_playercontainer">
+         <a href="#" class="ibm-video-placeholder">
+            <span class="ibm-video-play"></span>
+            <img src="/images/fpo-video.png" width="100%" height="100%" alt="Kaltura Education Video Solutions" />
+         </a>
+      </div>
+      <div class="tools col-xs-2 pull-right"><a class="fa fa-bookmark-o">bookmark</a><a class="fa fa-arrow-circle-o-down">Download</a><a class="fa fa-file-o">Transcript</a><a class="fa fa-envelope-o">Email</a>
       </div>
    </div>
    <div class="col-md-12">

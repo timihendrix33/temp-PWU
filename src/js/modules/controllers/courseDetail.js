@@ -1,11 +1,31 @@
 App.controller('courseDetailController',function($scope){
-	$scope.timeLeft = 45;
+	$scope.timeStats = {
+		duration:120,
+		timeSpent:45,
+		timeLeft:45
+	}
+
 	$scope.chapters = [
-		{'class':'fa-chevron-right complete'},
-		{'class':'fa-chevron-right complete'},
-		{'class':'fa-chevron-right'},
-		{'class':'fa-chevron-right'},
-		{'class':'fa-check'}
+		{
+			'class':'fa-chevron-right complete',
+			'tip':'try this out'
+		},
+		{
+			'class':'fa-chevron-right complete',
+			'tip':'try this out'
+		},
+		{
+			'class':'fa-chevron-right',
+			'tip':'Chapter 3: What is Cloud'
+		},
+		{
+			'class':'fa-chevron-right',
+			'tip':'try this out'
+		},
+		{
+			'class':'fa-check',
+			'tip':'Survey: What you\'ve learned'
+		}
 	]
 
 
@@ -73,13 +93,14 @@ App.controller('courseDetailController',function($scope){
 
 
 	$scope.courseDetails = {
+		format:'video',
+		timeStats:$scope.timeStats,
 		instructor : $scope.instructor,
 		rating : $scope.rating,
 		chapters : $scope.chapters,
 		relatedTags : $scope.relatedTags,
 		relatedContent : $scope.relatedContent
 	}
-
 
 
 });

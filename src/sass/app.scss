@@ -24,7 +24,7 @@
 
 
 // IBM v18
-@import "v18/application";
+//@import "v18/application";
 
 // IBM PW
 @import "pw/variables";
@@ -70,4 +70,20 @@ footer{
 .blueText{
 	color: $ibm-blue;
 }
+.tooltip .tooltip-inner {
+	font-size: .9em;
+	background: #fff;
+	border:1px solid $ibm-blue;
+	color: $ibm-blue;
+	z-index: 1;
+	padding:.5em 1em;
+  	max-width: 300px;
+}
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #fff;
+  margin-left: -10px;
+  border-width: 0 11px 11px;
+  z-index: 2;
+}
+
 @import "pw/pages/courseDetail";

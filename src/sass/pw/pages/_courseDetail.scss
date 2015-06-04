@@ -3,23 +3,33 @@
 	background: #fff;
 	color:#555555;
 	.courseNav{
+		position: relative;
 		background: $ibm-blue;
 		@include border-radius(5px 5px 0 0);
 		color:#fff;
 		padding:2rem 1rem;
 		.title{
 			float: left;
+			font-size: 1.95em;
 			padding:10px 0;
 		}
 		.time{
 			padding:10px 0;
-			float: right;
 			text-align: right;
+			font-size: 2em;
+			float: right;
+			display: block;
+		}
+		.type{
+			padding:10px 0;
+			float: right;
+			display: block;
 		}
 		.chapters{
 			clear:both;
 			ul{
 				@include clearfix();
+				padding:0;
 			}
 			li{
 				display: inline-block;
@@ -93,6 +103,39 @@
 			img{
 				@include border-radius(100%);
 			}
+		}
+	}
+	add-note{
+		position: absolute;
+		right: -10px;
+		top: 5px;
+		height: 50px;
+		padding:10px 30px;
+		min-width:100px;
+	}
+	.addNote{
+		color: $ibm-dark-grey;
+		background: $ibm-light-grey;
+		position: absolute;
+		z-index: 10;
+		max-height: 0;
+		overflow: hidden;
+		right:0;
+		top:50px;
+		@include transition(.4 all);
+		&
+		.content{
+			padding:2em;
+		}
+		
+	}
+	.open {
+		background: $ibm-light-grey;
+		> img,>span{
+			visibility: hidden;
+		}
+		.addNote{
+			max-height: 400px;
 		}
 	}
 }

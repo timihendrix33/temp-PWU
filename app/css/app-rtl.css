@@ -6472,7 +6472,7 @@ button.close {
   top: 0;
   left: 50%;
   margin-left: -5px;
-  border-width: 0 5px 5px;
+  border-width: 0 6px 6px;
   border-bottom-color: #222;
 }
 .tooltip.bottom-left .tooltip-arrow {

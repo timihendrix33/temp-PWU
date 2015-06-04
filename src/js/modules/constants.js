@@ -44,7 +44,7 @@ App
                              'vendor/fontawesome/css/font-awesome.min.css',
                              'vendor/simple-line-icons/css/simple-line-icons.css',
                              'vendor/weather-icons/css/weather-icons.min.css'],
-      'fontawesome'         ['vendor/fontawesome/css/font-awesome.min.css'],
+      'fontawesome':         ['vendor/fontawesome/css/font-awesome.min.css'],
       'sparklines':         ['app/vendor/sparklines/jquery.sparkline.min.js'],
       'wysiwyg':            ['vendor/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
                              'vendor/bootstrap-wysiwyg/external/jquery.hotkeys.js'],

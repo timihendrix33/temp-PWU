@@ -89,14 +89,14 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         url: '/',
         controller: 'AppController',
         templateUrl: helper.basepath('app.html'),
-        resolve: helper.resolveFor('modernizr', 'icons')
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
     .state('detail', {
         url: '/detail',
         controller: 'AppController',
         templateUrl: helper.basepath('detail.html'),
-        resolve: helper.resolveFor('modernizr', 'icons')
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
     // 
@@ -177,8 +177,10 @@ App
     'gray':                   '#dde6e9',
     'gray-light':             '#e4eaec',
     'gray-lighter':           '#edf1f2',
-    'havas':                   '#E6262B',
-    'blue':                   '#4687e9'
+    'blue':                   '#4687e9',
+    'ibm-blue':               '#00b2ef',
+    'ibm-dark-grey':          '#6a6a6a',
+    'ibm-background':         '#f4f4f4'
   })
   .constant('APP_MEDIAQUERY', {
     'desktopLG':             1200,
@@ -195,7 +197,12 @@ App
       'fastclick':          ['vendor/fastclick/lib/fastclick.js'],
       'modernizr':          ['vendor/modernizr/modernizr.js'],
       'animate':            ['vendor/animate.css/animate.min.css'],
-      'icons':              ['vendor/fontawesome/css/font-awesome.min.css'],
+      'icons':              ['vendor/skycons/skycons.js',
+                             'vendor/fontawesome/css/font-awesome.min.css',
+                             'vendor/simple-line-icons/css/simple-line-icons.css',
+                             'vendor/weather-icons/css/weather-icons.min.css'],
+      'fontawesome':         ['vendor/fontawesome/css/font-awesome.min.css'],
+      'sparklines':         ['app/vendor/sparklines/jquery.sparkline.min.js'],
       'wysiwyg':            ['vendor/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
                              'vendor/bootstrap-wysiwyg/external/jquery.hotkeys.js'],
       'slimscroll':         ['vendor/slimScroll/jquery.slimscroll.min.js'],
@@ -310,13 +317,33 @@ App
   })
 ;
 App.controller('courseDetailController',["$scope", function($scope){
-	$scope.timeLeft = 45;
+	$scope.timeStats = {
+		duration:120,
+		timeSpent:45,
+		timeLeft:45
+	}
+
 	$scope.chapters = [
-		{'class':'fa-chevron-right complete'},
-		{'class':'fa-chevron-right complete'},
-		{'class':'fa-chevron-right'},
-		{'class':'fa-chevron-right'},
-		{'class':'fa-check'}
+		{
+			'class':'fa-chevron-right complete',
+			'tip':'try this out'
+		},
+		{
+			'class':'fa-chevron-right complete',
+			'tip':'try this out'
+		},
+		{
+			'class':'fa-chevron-right',
+			'tip':'Chapter 3: What is Cloud'
+		},
+		{
+			'class':'fa-chevron-right',
+			'tip':'try this out'
+		},
+		{
+			'class':'fa-check',
+			'tip':'Survey: What you\'ve learned'
+		}
 	]
 
 
@@ -384,13 +411,14 @@ App.controller('courseDetailController',["$scope", function($scope){
 
 
 	$scope.courseDetails = {
+		format:'video',
+		timeStats:$scope.timeStats,
 		instructor : $scope.instructor,
 		rating : $scope.rating,
 		chapters : $scope.chapters,
 		relatedTags : $scope.relatedTags,
 		relatedContent : $scope.relatedContent
 	}
-
 
 
 }]);
@@ -405,6 +433,27 @@ App.controller('AppController',["$rootScope", "$scope", "$state", "$window", fun
     
 }]);
 
+/**=========================================================
+ * Module: addNote
+ =========================================================*/
+
+App.directive('addNote', function() {
+  return {   
+    restrict: 'E',
+    scope: true,
+    templateUrl:'/app/views/templates/add-note.html',
+    link: function(scope, element, attribute) {
+      var note = $('.addNote');
+      var cancel = $('a');
+      element.on('click',function(){
+          element.toggleClass('open');
+      });
+      cancel.on('click',function(){
+          $(note).toggleClass('open');
+      });
+    }
+   };
+});
 /**=========================================================
  * Module: anchor.js
  * Disables null anchor behavior
@@ -1569,6 +1618,36 @@ App.service('Utils', ["$window", "APP_MEDIAQUERY", function($window, APP_MEDIAQU
       }
     };
 }]);
+App.filter('time', function() {
+
+    var conversions = {
+      'ss': angular.identity,
+      'mm': function(value) { return value * 60; },
+      'hh': function(value) { return value * 3600; }
+    };
+
+    var padding = function(value, length) {
+      var zeroes = length - ('' + (value)).length,
+          pad = '';
+      while(zeroes-- > 0) pad += '0';
+      return pad + value;
+    };
+
+    return function(value, unit, format, isPadded) {
+      var totalSeconds = conversions[unit || 'ss'](value),
+          hh = Math.floor(totalSeconds / 3600),
+          mm = Math.floor((totalSeconds % 3600) / 60),
+          ss = totalSeconds % 60;
+
+      format = format || 'hh:mm:ss';
+      isPadded = angular.isDefined(isPadded)? isPadded: true;
+      hh = isPadded ? padding(hh, 2): hh;
+      mm = isPadded ? padding(mm, 2): mm;
+      ss = isPadded ? padding(ss, 2): ss;
+
+      return format.replace(/hh/, hh).replace(/mm/, mm).replace(/ss/, ss);
+    };
+  });
 // To run this code, edit file 
 // index.html or index.jade and change
 // html data-ng-app attribute from
