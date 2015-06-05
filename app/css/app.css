@@ -7594,8 +7594,16 @@ footer {
   width: 100%;
   margin-top: -1em;
 }
-#courseDetail .courseNav .tools {
+#courseDetail .tools {
+  @inlcude clearfix();
+  background: #f4f4f4;
   color: #6a6a6a;
+}
+#courseDetail .tools a {
+  padding: 10px 0;
+}
+#courseDetail .tools a img {
+  padding-right: 10px;
 }
 #courseDetail .tags {
   padding: .5em 0;
@@ -7648,6 +7656,10 @@ footer {
   height: 50px;
   padding: 10px 30px;
   min-width: 100px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
 }
 #courseDetail .addNote {
   color: #6a6a6a;
@@ -7658,9 +7670,10 @@ footer {
   overflow: hidden;
   right: 0;
   top: 50px;
-  -webkit-transition: 0.4 all;
-  -o-transition: 0.4 all;
-  transition: 0.4 all;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: default;
 }
 #courseDetail .addNote
 .content {
