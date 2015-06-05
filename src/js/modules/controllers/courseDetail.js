@@ -23,7 +23,7 @@ App.controller('courseDetailController',function($scope){
 			'tip':'try this out'
 		},
 		{
-			'class':'fa-check',
+			'class':'fa-check end',
 			'tip':'Survey: What you\'ve learned'
 		}
 	]
@@ -89,6 +89,32 @@ App.controller('courseDetailController',function($scope){
 			}]
 		}
 	];
+
+
+
+ 		$scope.showHideCarousel = function(show){
+ 			if(show){
+ 				$('.carousel').attr('rn-carousel','true');
+ 			}else{
+ 				$('.carousel').removeAttr('rn-carousel');
+ 				$('.carousel li').attr('style','');
+ 			}
+ 		}
+
+ 		$scope.isMobile = function(){
+ 			return ($(window).width() < 768);
+ 		}
+
+ 		$scope.showHideCarousel($scope.isMobile());
+
+        $scope.$on('window::resize', function() {
+        	$scope.showHideCarousel($scope.isMobile());
+        });
+		$scope.slideIndex = 0;
+        $scope.$watch('carouselIndex', function (newIndex, oldIndex) {
+        	console.log(newIndex,oldIndex);
+        });
+
 
 
 

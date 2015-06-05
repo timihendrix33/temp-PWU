@@ -27,46 +27,69 @@
 		}
 		.chapters{
 			clear:both;
+
+	ul.carousel{
+		height: 150px;
+		  @media (min-width: $screen-sm-min) { 
+		  	height:auto;
+		  }
+		li{
+			padding:35px 0 15px;
+			color:#fff;
+			width:100%;
+			&:after{
+				content:" ";
+				display: none;
+			}
+		}
+	}
+
+
 			ul{
 				@include clearfix();
+				margin: 0;
 				padding:0;
-			}
-			li{
-				display: inline-block;
-				list-style: none;
-				width:19%;
-				padding:0;
-				margin:0;
-				a.fa{
-					border:1px solid #fff;
-					@include border-radius(5rem);
-					  font-size: 1.5rem;
-					  padding: 0.5rem .7rem;
-					  background:$ibm-blue;
-					  &:hover,&.complete{
-					  	&:before{
-						  	color:$ibm-blue;
-						  }
-					  	background: #fff;
-					  }
-					  &:hover,&:active,&:focus{
-					  	text-decoration: none;
-					  }
-					  .fa-check{
-					  	padding:0.5rem;
-					  }
-				}
-				&:before{
-					display:none;
-				}
-				&:after{
-					content:" ";
+				li{
+					list-style: none;
+					margin: 0;
+					padding: 0;
 					display: block;
-					background: #fff;
-					height: 1px;
-					width:100%;
-					margin-top: -1em;
-				};
+					width:19%;
+					float: left;
+					a.fa{
+						border:1px solid #fff;
+						@include border-radius(5rem);
+						  font-size: 1.5rem;
+						  padding: 0.5rem .7rem;
+						  background:$ibm-blue;
+						  &:hover,&.complete{
+						  	&:before{
+							  	color:$ibm-blue;
+							  }
+						  	background: #fff;
+						  }
+						  &:hover,&:active,&:focus{
+						  	text-decoration: none;
+						  }
+						  .fa-check{
+						  	padding:0.5rem;
+						  }
+					}
+					&:before{
+						display:none;
+					}
+					&:after{
+						content:" ";
+						display: block;
+						background: #fff;
+						height: 1px;
+						width:100%;
+						margin-top: -1em;
+					}
+					&:last-child:after{
+						display: none;
+					}
+				}
 			}
 		}
 	}
@@ -115,7 +138,7 @@
 	}
 	add-note{
 		position: absolute;
-		right: -10px;
+		right: -11px;
 		top: 5px;
 		height: 50px;
 		padding:10px 30px;
@@ -149,4 +172,24 @@
 			max-height: 400px;
 		}
 	}
+}
+
+.rn-carousel-control.rn-carousel-control-next{
+		&:before{
+			content:" "!important;
+			display: block;
+			height: 40px;
+			width:26px;
+			background:url('/images/icons/nextArrow.png') no-repeat;
+		}
+	}
+.rn-carousel-control.rn-carousel-control-prev{
+		&:before{
+			content:" "!important;
+			display: block;
+			height: 40px;
+			width:26px;
+			background:url('/images/icons/prevArrow.png') no-repeat;
+		}
+
 }

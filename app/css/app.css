@@ -7448,6 +7448,8 @@ fieldset .form-group {
 .card h3 {
   padding-top: 1em;
   padding-bottom: 1em;
+  font-family: "LubalinGraphStdBookIBM", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+  color: #fff;
 }
 .card.cloud h3 {
   background: #00b2ef;
@@ -7464,13 +7466,15 @@ footer {
   padding: 2em;
 }
 
-.ibm-type a {
+a {
   color: inherit;
 }
-.ibm-type h1, .ibm-type h2, .ibm-type h2, .ibm-type h4, .ibm-type h5 {
+
+h1, h2, h2, h4, h5 {
   font-weight: normal;
 }
-.ibm-type h2 {
+
+h2 {
   font-size: 1.2em;
   font-family: "LubalinGraphStdBookIBM", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
 }
@@ -7545,7 +7549,25 @@ footer {
 #courseDetail .courseNav .chapters {
   clear: both;
 }
+#courseDetail .courseNav .chapters ul.carousel {
+  height: 150px;
+}
+@media (min-width: 768px) {
+  #courseDetail .courseNav .chapters ul.carousel {
+    height: auto;
+  }
+}
+#courseDetail .courseNav .chapters ul.carousel li {
+  padding: 35px 0 15px;
+  color: #fff;
+  width: 100%;
+}
+#courseDetail .courseNav .chapters ul.carousel li:after {
+  content: " ";
+  display: none;
+}
 #courseDetail .courseNav .chapters ul {
+  margin: 0;
   padding: 0;
 }
 #courseDetail .courseNav .chapters ul:before, #courseDetail .courseNav .chapters ul:after {
@@ -7555,14 +7577,15 @@ footer {
 #courseDetail .courseNav .chapters ul:after {
   clear: both;
 }
-#courseDetail .courseNav .chapters li {
-  display: inline-block;
+#courseDetail .courseNav .chapters ul li {
   list-style: none;
-  width: 19%;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  display: block;
+  width: 19%;
+  float: left;
 }
-#courseDetail .courseNav .chapters li a.fa {
+#courseDetail .courseNav .chapters ul li a.fa {
   border: 1px solid #fff;
   -moz-border-radius: 5rem;
   -webkit-border-radius: 5rem;
@@ -7571,28 +7594,31 @@ footer {
   padding: 0.5rem .7rem;
   background: #00b2ef;
 }
-#courseDetail .courseNav .chapters li a.fa:hover, #courseDetail .courseNav .chapters li a.fa.complete {
+#courseDetail .courseNav .chapters ul li a.fa:hover, #courseDetail .courseNav .chapters ul li a.fa.complete {
   background: #fff;
 }
-#courseDetail .courseNav .chapters li a.fa:hover:before, #courseDetail .courseNav .chapters li a.fa.complete:before {
+#courseDetail .courseNav .chapters ul li a.fa:hover:before, #courseDetail .courseNav .chapters ul li a.fa.complete:before {
   color: #00b2ef;
 }
-#courseDetail .courseNav .chapters li a.fa:hover, #courseDetail .courseNav .chapters li a.fa:active, #courseDetail .courseNav .chapters li a.fa:focus {
+#courseDetail .courseNav .chapters ul li a.fa:hover, #courseDetail .courseNav .chapters ul li a.fa:active, #courseDetail .courseNav .chapters ul li a.fa:focus {
   text-decoration: none;
 }
-#courseDetail .courseNav .chapters li a.fa .fa-check {
+#courseDetail .courseNav .chapters ul li a.fa .fa-check {
   padding: 0.5rem;
 }
-#courseDetail .courseNav .chapters li:before {
+#courseDetail .courseNav .chapters ul li:before {
   display: none;
 }
-#courseDetail .courseNav .chapters li:after {
+#courseDetail .courseNav .chapters ul li:after {
   content: " ";
   display: block;
   background: #fff;
   height: 1px;
   width: 100%;
   margin-top: -1em;
+}
+#courseDetail .courseNav .chapters ul li:last-child:after {
+  display: none;
 }
 #courseDetail .tools {
   @inlcude clearfix();
@@ -7651,7 +7677,7 @@ footer {
 }
 #courseDetail add-note {
   position: absolute;
-  right: -10px;
+  right: -11px;
   top: 5px;
   height: 50px;
   padding: 10px 30px;
@@ -7687,4 +7713,20 @@ footer {
 }
 #courseDetail .open .addNote {
   max-height: 400px;
+}
+
+.rn-carousel-control.rn-carousel-control-next:before {
+  content: " " !important;
+  display: block;
+  height: 40px;
+  width: 26px;
+  background: url("/images/icons/nextArrow.png") no-repeat;
+}
+
+.rn-carousel-control.rn-carousel-control-prev:before {
+  content: " " !important;
+  display: block;
+  height: 40px;
+  width: 26px;
+  background: url("/images/icons/prevArrow.png") no-repeat;
 }

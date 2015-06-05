@@ -29,7 +29,7 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         url: '/detail',
         controller: 'AppController',
         templateUrl: helper.basepath('detail.html'),
-        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome','angular-carousel')
  
     })
     // 

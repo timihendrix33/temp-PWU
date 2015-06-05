@@ -45,17 +45,15 @@ body.ibm-type{
 footer{
     padding: 2em;
 }
-.ibm-type{
-	a {
-		color: inherit;
-	}
-	h1,h2,h2,h4,h5{
-		font-weight: normal;
-	}
-	h2{
-		font-size: 1.2em;
-		@include useLubalinGraphStdBookIBM()
-	}
+a {
+	color: inherit;
+}
+h1,h2,h2,h4,h5{
+	font-weight: normal;
+}
+h2{
+	font-size: 1.2em;
+	@include useLubalinGraphStdBookIBM()
 }
 .wrapper{
 	@include clearfix();

@@ -5,7 +5,10 @@ div(ng-controller="courseDetailController")#courseDetail
 			span.type {{courseDetails.format}}
 			span.time {{courseDetails.timeStats.timeSpent}} mins
 		div.chapters.col-xs-10
-			ul
+			ul.carousel.clearfix(rn-carousel rn-carousel-controls rn-carousel-index="carouselIndex" ng-show="isMobile()")
+				li(ng-repeat="c in courseDetails.chapters")
+					span {{c.tip}}
+			ul(rn-carousel-index="carouselIndex")
 				li(ng-repeat="c in courseDetails.chapters")
 					a.fa(href="#chapter-{{$index}}" ng-class="c.class" tooltip-placement="bottom" tooltip="{{c.tip}}")
 		div.addnote.col-xs-2
@@ -85,7 +88,7 @@ div(ng-controller="courseDetailController")#courseDetail
 	.relatedContent.col-md-12(ng-show="courseDetails.relatedContent")
 		h2 Related Content:
 	.col-md-12.no-gutters
-		.col-md-6(ng-repeat="card in courseDetails.relatedContent")
+		.col-md-6.no-gutters(ng-repeat="card in courseDetails.relatedContent")
 			.card(class="{{card.catagory.toLowerCase()}}")
 				h3 {{card.title}}
 					span.difficulty.easy
