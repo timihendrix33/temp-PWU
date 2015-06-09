@@ -27,9 +27,16 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
     })
     .state('detail', {
         url: '/detail',
-        controller: 'AppController',
+        controller: 'courseDetailController',
         templateUrl: helper.basepath('detail.html'),
-        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome','angular-carousel')
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome','angular-carousel','progressbar')
+ 
+    })
+    .state('roadmap', {
+        url: '/roadmap',
+        controller: 'roadmapController',
+        templateUrl: helper.basepath('roadmap.html'),
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
     // 

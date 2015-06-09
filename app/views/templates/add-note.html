@@ -1,11 +1,11 @@
-<img src="/images/icons/notes.png" />
-<span>Add a note</span>
+<span ng-click="toggleNote()">
+   <img src="/images/icons/notes.png" />Add a note</span>
 <div class="addNote">
    <div class="content">
       <h2>Add a note</h2>
       <label>Note Tile:</label>
       <input/>
       <label>Note Text:</label>
-      <textarea></textarea><a>Cancel</a>
+      <textarea></textarea><a ng-click="closeNote()">Cancel</a>
    </div>
 </div>

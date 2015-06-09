@@ -25,7 +25,8 @@ var App = angular.module('pwu', [
     'cfp.loadingBar',
     'ngSanitize',
     'ngResource',
-    'ui.utils'
+    'ui.utils',
+    'ngDialog'
   ]);
 
 App.run(["$rootScope", "$state", "$stateParams",  '$window', '$templateCache', function ($rootScope, $state, $stateParams, $window, $templateCache) {
@@ -33,6 +34,7 @@ App.run(["$rootScope", "$state", "$stateParams",  '$window', '$templateCache', f
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$storage = $window.localStorage;
+    $rootScope.breadCrumb = false;
 
     // Uncomment this to disable template cache
     /*$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {

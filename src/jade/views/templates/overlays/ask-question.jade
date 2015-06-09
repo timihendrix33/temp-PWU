@@ -1,0 +1,20 @@
+.askQuestion
+	h2 Ask a question
+
+	p Your question will be sent to........
+	.instructorDetail
+		span.profilePic
+			img(ng-src="{{courseDetails.instructor.image}}")
+		.info
+			.name 
+				strong {{courseDetails.instructor.name}}
+			.title {{courseDetails.instructor.title}}
+	label From:
+	input(type="email" placeholder="somebodyus.ibm.com")
+
+	label Note
+	textarea(placeholder="Optional")
+
+	.submit
+		a(ng-click="closeThisDialog()") Cancel
+		button.tag Send

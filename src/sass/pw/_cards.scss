@@ -2,23 +2,87 @@
 	width:100%;
 	padding:0;
 	margin:0;
-	background: #fff;
 	@include cardBottom();
-	h3{
-		padding-top:1em;
-		padding-bottom:1em;
+    line-height: 1.6em;
+    a.header{
+		padding:1em;
+		display: block;
 		@include useLubalinGraphStdBookIBM();
+		@include border-radius(5px 5px 0 0);
 		color:#fff;
 		span{
 
+		}
+	}
+	.content{
+		height: 400px;
+		padding:15px 8%;
+		position: relative;
+		p{
+			margin: .2em 0;
+		}
+		.catagory{
+			font-size: .8em;
 		}
 	}
 	.details{
 		
 	}
 	&.cloud{
-		h3{
+		a.header{
 			background:$ibm-blue;
+		}
+	}
+	.tags{
+		position: absolute;
+		bottom: 125px;
+	}
+	.activity{		
+		position: absolute;
+		bottom: 30px;
+		.play{
+			font-size: 1em;
+			height: 40px;
+			@include clearfix();
+			a{
+				display: inline-block;
+				color: $ibm-blue;
+				span.playBtn{
+					display: block;
+					float: left;
+					height:36px;
+					width:36px;
+					position: relative;
+					top:-7px;
+					margin-right: 10px;
+				}
+				+ span:before{
+					content: ' ● ';
+					margin:0  7px;
+				}
+			}
+			.resume a .playBtn{
+				background: url('/images/icons/play-btn-blue.png') no-repeat 50% 50%;
+			}
+			.start a .playBtn{
+				background: url('/images/icons/play-btn-white.png') no-repeat 50% 50% $ibm-blue;
+				@include border-radius(100%);
+			}
+		}
+	}
+	ul.timeLine{
+		display: block;
+		margin: auto;
+		li a.fa.complete{
+			background: $ibm-blue;
+			color:#fff;
+			&:before{
+				color:#fff;				
+			}
+		}
+		li a.fa{
+			background: $ibm-light-grey;
+			color: $ibm-grey;
 		}
 	}
 }

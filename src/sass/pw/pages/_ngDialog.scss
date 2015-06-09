@@ -1,0 +1,67 @@
+.ngdialog-content{
+	width:550px;
+	>div{
+		padding:1.5em;
+	}
+	color:$ibm-dark-grey;
+	input,label,textarea{
+		display: block;
+		width: 100%;
+		margin: auto;
+	}
+	input,textarea{
+		border:1px solid $ibm-dark-grey;
+		@include border-radius(5px);
+		padding:4px 0 4px 10px;
+	}
+	label{
+			@include useLubalinGraphStdBookIBM();
+			padding:15px 0 5px;
+	}
+	button{
+		background: inherit;
+	}
+	.submit{
+		padding:25px 0 0;
+		text-align: right;
+	}
+	h2{
+
+		font-size: 1.4em;
+		padding-bottom: 10px;
+	}
+	.emailCourse{
+		h1{
+		    font-family:"HelveticaNeue-Light",
+		    "Helvetica Neue Light",
+		    "Helvetica Neue",
+		    Helvetica,
+		    Arial;
+			color: $ibm-blue;
+			font-size: 2em;
+			padding-bottom: 10px;
+		}
+	}
+	.url{
+		font-size: .8em;
+	}
+	.askQuestion{
+		.instructorDetail{
+			@include clearfix();
+			width: 100%;
+			margin: auto;
+			padding-bottom: 15px;
+			margin-bottom: 15px;
+			border-bottom:1px solid $ibm-light-grey;
+		.profilePic{
+			float: left;
+			margin: 0 20px;
+			img{
+				@include border-radius(100%);
+			}
+		}
+	}
+}
+
+
+}

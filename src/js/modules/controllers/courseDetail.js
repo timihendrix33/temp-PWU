@@ -1,10 +1,16 @@
-App.controller('courseDetailController',function($scope){
+App.controller('courseDetailController',function($scope,$rootScope,ngDialog){
+
+	$rootScope.breadCrumb = {
+		text:"Cloud Readiness Roadmap",
+		url:"/#/roadmap"
+	}
+
 	$scope.timeStats = {
 		duration:120,
 		timeSpent:45,
 		timeLeft:45
 	}
-
+	$scope.title = 'Cloud Defined';
 	$scope.chapters = [
 		{
 			'class':'fa-chevron-right complete',
@@ -29,12 +35,20 @@ App.controller('courseDetailController',function($scope){
 	]
 
 
-
+$scope.clickToOpen = function (template) {
+		var templateURL = '/app/views/templates/overlays/ask-question.html';
+		if(template=='email')templateURL = '/app/views/templates/overlays/email-course.html';
+        ngDialog.open({
+        	template:templateURL,
+        	scope: $scope
+        });
+    };
 
 	$scope.instructor = {
 		name:'Ted Hatcher',
 		title:'Sales Manager',
 		email:'ted.hatcher@ibm.com',
+		description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed t, consectetur adipisicing elit, sed ',
 		image:'/images/course-detail/profile-image.png'
 	}
 
@@ -68,16 +82,41 @@ App.controller('courseDetailController',function($scope){
 		{
 			title:'Suspendisse Fermentum',
 			difficulty:1,
+			duration:60,
 			catagory:'Cloud',
-			description:'Greek Text',
+			remaining:10,
+			description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			tags:[{
 				name:'magna',
 				link:'link'
-			}]
-		},
+			}],
+			chapters:[
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'try this out'
+					},
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'try this out'
+					},
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'Chapter 3: What is Cloud'
+					},
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'try this out'
+					},
+					{
+						'class':'fa-check end',
+						'tip':'Survey: What you\'ve learned'
+					}],
+				},
 		{
 			title:'Celerisque',
 			difficulty:2,
+			duration:60,
+			remaining:60,
 			catagory:'Cloud',
 			description:'Greek Text',
 			tags:[{
@@ -86,7 +125,29 @@ App.controller('courseDetailController',function($scope){
 			},{
 				name:'Maxima',
 				link:'link'
-			}]
+			}],
+			chapters:[
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'Chapter 3: What is Cloud'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-check end',
+					'tip':'Survey: What you\'ve learned'
+				}
+			]
 		}
 	];
 
@@ -119,6 +180,7 @@ App.controller('courseDetailController',function($scope){
 
 
 	$scope.courseDetails = {
+		title: $scope.title,
 		format:'video',
 		timeStats:$scope.timeStats,
 		instructor : $scope.instructor,

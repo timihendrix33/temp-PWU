@@ -17,5 +17,6 @@
   "bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js",
   "bower_components/oclazyload/dist/ocLazyLoad.js",
   "bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+  "bower_components/ngDialog/js/ngDialog.js",
   "bower_components/angular-loading-bar/build/loading-bar.js"
 ]

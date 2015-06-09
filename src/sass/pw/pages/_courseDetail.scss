@@ -1,24 +1,36 @@
 #courseDetail{
 	margin:auto;
-	background: #fff;
 	color:#555555;
+	> .content{
+		background: #fff;
+	}
 	.courseNav{
-		position: relative;
-		background: $ibm-blue;
-		@include border-radius(5px 5px 0 0);
-		color:#fff;
-		padding:2rem 1rem;
+		> .content{
+			background: $ibm-blue;
+			position: relative;
+			@include border-radius(5px 5px 0 0);
+			color:#fff;
+			padding:2rem 1rem;
 		.title{
 			float: left;
-			font-size: 1.95em;
+			font-size: 1.55em;
 			padding:10px 0;
+		}
+		.right{
+			position: absolute;
+			right: 0;
+			left: auto;
+			top:0;
 		}
 		.time{
 			padding:10px 0;
 			text-align: right;
-			font-size: 2em;
+			font-size: 1.6em;
 			float: right;
 			display: block;
+		  @media (min-width: $screen-sm-min) { 
+			font-size: 2em;
+		  }
 		}
 		.type{
 			padding:10px 0;
@@ -37,6 +49,11 @@
 			padding:35px 0 15px;
 			color:#fff;
 			width:100%;
+			span{
+				padding-top: 45px;
+				display: block;
+				text-align: center;
+			}
 			&:after{
 				content:" ";
 				display: none;
@@ -56,25 +73,6 @@
 					display: block;
 					width:19%;
 					float: left;
-					a.fa{
-						border:1px solid #fff;
-						@include border-radius(5rem);
-						  font-size: 1.5rem;
-						  padding: 0.5rem .7rem;
-						  background:$ibm-blue;
-						  &:hover,&.complete{
-						  	&:before{
-							  	color:$ibm-blue;
-							  }
-						  	background: #fff;
-						  }
-						  &:hover,&:active,&:focus{
-						  	text-decoration: none;
-						  }
-						  .fa-check{
-						  	padding:0.5rem;
-						  }
-					}
 					&:before{
 						display:none;
 					}
@@ -92,7 +90,8 @@
 				}
 			}
 		}
-	}
+		}
+	} //courseNav
 	.tools{
 		@inlcude clearfix();
 		background: $ibm-background;
@@ -108,11 +107,7 @@
 		padding:.5em 0;
 	}
 	.tag{
-		@include border-radius(3em);
-		padding:.5em 1em;
 		margin-right:1em;
-		border:2px solid;
-		display: inline-block;
 		&:last-child{
 			margin-right:0;
 		}
@@ -126,11 +121,15 @@
 		@include clearfix();
 	}
 	.extraDetails{
+		>div{
+			padding-bottom:25px;
+		}
 		.ratings{
 			display: block;
 		}
 		.profilePic{
 			float: left;
+			margin-right: 20px;
 			img{
 				@include border-radius(100%);
 			}
@@ -138,40 +137,108 @@
 	}
 	add-note{
 		position: absolute;
-		right: -11px;
-		top: 5px;
+		right: 15px;
 		height: 50px;
-		padding:10px 30px;
 		min-width:100px;
+		padding:0;
  		 @include transition(all .4s);
  		 cursor: pointer;
+		 top: 45px;
+	  @media (min-width: $screen-sm-min) { 
+			top: 60px;
+	  }
+	  img{
+	  	position: relative;
+	  	top: 5px;
+	  }
 	}
 	.addNote{
 		color: $ibm-dark-grey;
-		background: $ibm-light-grey;
-		position: absolute;
+		background: rgba($ibm-light-grey,.9);
+		position: fixed;
 		z-index: 10;
 		max-height: 0;
 		overflow: hidden;
-		right:0;
-		top:50px;
- 		 @include transition(all .4s);
+		left:0;
+		top:0px;
+		width:100%;
+ 		 @include transition(max-height .4s);
  		 cursor: default;
-		&
-		.content{
-			padding:2em;
+		 .content{
+			padding:5% 10%;
 		}
-		
+	  @media (min-width: $screen-sm-min) { 
+		height: auto;
+		position: absolute;
+	  	left:auto;
+		right:-15px;
+		top: 54px;
+		width:400px;
+	  }
+	  label{
+	  	display: block;
+	  }
+	  input,textarea{
+	  	width:100%;
+	  }
+	  a{
+	  	display: block;
+	  }
 	}
 	.open {
-		background: $ibm-light-grey;
+	  @media (min-width: $screen-sm-min) { 
+		//background: $ibm-light-grey;
 		> img,>span{
-			visibility: hidden;
+			//visibility: hidden;
 		}
+	  }
 		.addNote{
 			max-height: 400px;
 		}
 	}
+}
+
+ul.timeLine li{
+	display: inline-block;
+	list-style: none;
+	&:before{
+		display:none;
+	}
+	&:after{
+		content:" ";
+		display: block;
+		background: #fff;
+		height: 1px;
+		width:100%;
+		margin-top: -1em;
+	}
+	a.fa{
+	border:1px solid #fff;
+	@include border-radius(5rem);
+	  font-size: .7rem;
+	  padding: 0.5rem .6rem;
+	  background:$ibm-blue;
+			@media (min-width: $screen-sm-min) { 
+	  font-size: 1.5rem;
+	  padding: 0.5rem .7rem;
+			}
+	  &:hover,&.complete{
+	  	&:before{
+		  	color:$ibm-blue;
+		  }
+	  	background: #fff;
+	  }
+	  &:hover,&:active,&:focus{
+	  	text-decoration: none;
+	  }
+	  .fa-check{
+	  	padding:0.5rem;
+	  }
+	} 
+}
+
+.relatedContent h2{
+	padding:1em 2em;
 }
 
 .rn-carousel-control.rn-carousel-control-next{

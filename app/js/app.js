@@ -25,7 +25,8 @@ var App = angular.module('pwu', [
     'cfp.loadingBar',
     'ngSanitize',
     'ngResource',
-    'ui.utils'
+    'ui.utils',
+    'ngDialog'
   ]);
 
 App.run(["$rootScope", "$state", "$stateParams",  '$window', '$templateCache', function ($rootScope, $state, $stateParams, $window, $templateCache) {
@@ -33,6 +34,7 @@ App.run(["$rootScope", "$state", "$stateParams",  '$window', '$templateCache', f
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$storage = $window.localStorage;
+    $rootScope.breadCrumb = false;
 
     // Uncomment this to disable template cache
     /*$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
@@ -94,9 +96,16 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
     })
     .state('detail', {
         url: '/detail',
-        controller: 'AppController',
+        controller: 'courseDetailController',
         templateUrl: helper.basepath('detail.html'),
-        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome','angular-carousel')
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome','angular-carousel','progressbar')
+ 
+    })
+    .state('roadmap', {
+        url: '/roadmap',
+        controller: 'roadmapController',
+        templateUrl: helper.basepath('roadmap.html'),
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
     // 
@@ -192,7 +201,8 @@ App
     // jQuery based and standalone scripts
     scripts: {
       'whirl':              ['vendor/whirl/dist/whirl.css'],
-      'classyloader':       ['vendor/jquery-classyloader/js/jquery.classyloader.min.js'],
+      'classyloader':       ['vendor/classy-loader/jquery.classyloader.js'],
+      'progressbar':       ['vendor/progressbar.js/dist/progressbar.js'],
       'animo':              ['vendor/animo.js/animo.js'],
       'fastclick':          ['vendor/fastclick/lib/fastclick.js'],
       'modernizr':          ['vendor/modernizr/modernizr.js'],
@@ -316,13 +326,19 @@ App
     ]
   })
 ;
-App.controller('courseDetailController',["$scope", function($scope){
+App.controller('courseDetailController',["$scope", "$rootScope", "ngDialog", function($scope,$rootScope,ngDialog){
+
+	$rootScope.breadCrumb = {
+		text:"Cloud Readiness Roadmap",
+		url:"/#/roadmap"
+	}
+
 	$scope.timeStats = {
 		duration:120,
 		timeSpent:45,
 		timeLeft:45
 	}
-
+	$scope.title = 'Cloud Defined';
 	$scope.chapters = [
 		{
 			'class':'fa-chevron-right complete',
@@ -347,12 +363,20 @@ App.controller('courseDetailController',["$scope", function($scope){
 	]
 
 
-
+$scope.clickToOpen = function (template) {
+		var templateURL = '/app/views/templates/overlays/ask-question.html';
+		if(template=='email')templateURL = '/app/views/templates/overlays/email-course.html';
+        ngDialog.open({
+        	template:templateURL,
+        	scope: $scope
+        });
+    };
 
 	$scope.instructor = {
 		name:'Ted Hatcher',
 		title:'Sales Manager',
 		email:'ted.hatcher@ibm.com',
+		description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed t, consectetur adipisicing elit, sed ',
 		image:'/images/course-detail/profile-image.png'
 	}
 
@@ -386,16 +410,41 @@ App.controller('courseDetailController',["$scope", function($scope){
 		{
 			title:'Suspendisse Fermentum',
 			difficulty:1,
+			duration:60,
 			catagory:'Cloud',
-			description:'Greek Text',
+			remaining:10,
+			description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			tags:[{
 				name:'magna',
 				link:'link'
-			}]
-		},
+			}],
+			chapters:[
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'try this out'
+					},
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'try this out'
+					},
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'Chapter 3: What is Cloud'
+					},
+					{
+						'class':'fa-chevron-right complete',
+						'tip':'try this out'
+					},
+					{
+						'class':'fa-check end',
+						'tip':'Survey: What you\'ve learned'
+					}],
+				},
 		{
 			title:'Celerisque',
 			difficulty:2,
+			duration:60,
+			remaining:60,
 			catagory:'Cloud',
 			description:'Greek Text',
 			tags:[{
@@ -404,7 +453,29 @@ App.controller('courseDetailController',["$scope", function($scope){
 			},{
 				name:'Maxima',
 				link:'link'
-			}]
+			}],
+			chapters:[
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'Chapter 3: What is Cloud'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-check end',
+					'tip':'Survey: What you\'ve learned'
+				}
+			]
 		}
 	];
 
@@ -437,6 +508,7 @@ App.controller('courseDetailController',["$scope", function($scope){
 
 
 	$scope.courseDetails = {
+		title: $scope.title,
 		format:'video',
 		timeStats:$scope.timeStats,
 		instructor : $scope.instructor,
@@ -459,6 +531,12 @@ App.controller('AppController',["$rootScope", "$scope", "$state", "$window", fun
     
 }]);
 
+App.controller('roadmapController',["$scope", "$rootScope", function($scope,$rootScope){
+	
+
+	$rootScope.breadCrumb = false;
+
+}]);
 /**=========================================================
  * Module: addNote
  =========================================================*/
@@ -469,14 +547,16 @@ App.directive('addNote', function() {
     scope: true,
     templateUrl:'/app/views/templates/add-note.html',
     link: function(scope, element, attribute) {
-      var note = $('.addNote');
-      var cancel = $('a');
-      element.on('click',function(){
-          element.toggleClass('open');
-      });
-      cancel.on('click',function(){
-          $(note).toggleClass('open');
-      });
+      scope.toggleNote = function(){
+          element.addClass('open');
+      };
+      scope.openNote = function(){
+          element.openNote('open');
+      };
+      scope.closeNote = function(){
+          element.removeClass('open');
+      };
+
     }
    };
 });
@@ -1160,6 +1240,45 @@ App.directive("now", ['dateFilter', '$interval', function(dateFilter, $interval)
       }
     };
 }]);
+App.directive('popupOverlay', ["$http", function($http) {
+  return {   
+    restrict: 'A',
+    scope: true,
+    link: function(scope, element, attribute) {
+
+      var overlayHTML = "<div>"
+
+    }
+   };
+}]);
+/**=========================================================
+ * Module: progress Bar
+ =========================================================*/
+
+App.directive('progressBar', ["colors", function(colors) {
+  return {   
+    restrict: 'AE',
+    scope: true,
+    link: function(scope, element, attribute) {
+
+        console.log(scope);
+
+        var moveTo = (attribute.duration - attribute.remaining) / attribute.duration;
+
+        var circle = new ProgressBar.Circle($(element)[0], {
+              color: colors.byName('ibm-blue'),
+              strokeWidth: 5,
+              trailColor: '#fff'
+          });
+          circle.animate(moveTo, {
+              duration: 2500,
+              easing: 'easeInOut'
+          });
+
+
+      }
+   }
+}]);
 /**=========================================================
  * Module: scroll.js
  * Make a content box scrollable
@@ -1198,6 +1317,31 @@ App.directive('scrollable', function(){
 //     }
 //   };
 // });
+App.directive('ibmDyntabs', function() {
+  return {   
+    restrict: 'C',
+    scope: true,
+    //templateUrl:'/app/views/templates/add-note.html',
+    link: function(scope, element, attribute) {
+    	var tabLinks = $('.ibm-tabs li a',element);
+    	var tabs = $('.ibm-container-body .ibm-tabs-content',element);
+
+    	function activeTab(link,active){
+			tabLinks.parent().removeClass('ibm-active');
+			tabs.hide();
+
+			active.show();
+			link.parent().addClass('ibm-active');
+    	}
+
+
+      tabLinks.on('click',function(){
+      	activeTab($(this),$($(this).attr('href')))
+      });
+      activeTab($(tabLinks[0]),$(tabs[0]))
+    }
+   };
+});
 /**=========================================================
  * Module: toggle-state.js
  * Toggle a classname from the BODY Useful to change a state that 
@@ -1396,6 +1540,21 @@ App.service('browser', function(){
   return browser;
 
 });
+/**=========================================================
+ * Module: colors.js
+ * Services to retrieve global colors
+ =========================================================*/
+ 
+App.factory('colors', ['APP_COLORS', function(colors) {
+  
+  return {
+    byName: function(name) {
+      return (colors[name] || '#fff');
+    }
+  };
+
+}]);
+
 /**=========================================================
  * Module: nav-search.js
  * Services to share navbar search functions

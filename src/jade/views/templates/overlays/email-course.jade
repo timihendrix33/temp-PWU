@@ -1,0 +1,18 @@
+.emailCourse
+	h2 Email this Course:
+
+	h1 {{courseDetails.title}}
+	span.url http://www.ibm.com/partnerworlduniversity/course/clouddefined
+
+	label To:
+	input(type="email" placeholder="Friend's email")
+
+	label From:
+	input(type="email" placeholder="somebodyus.ibm.com")
+
+	label Note
+	textarea(placeholder="Optional")
+
+	.submit
+		a(ng-click="closeThisDialog()") Cancel
+		button.tag Send

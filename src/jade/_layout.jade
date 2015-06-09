@@ -8,6 +8,8 @@ html(lang="en", data-ng-app="pwu")
 		include ./views/partials/_nav
 
 		.wrapper.container
+			.breadcrumb(ng-show="breadCrumb") 
+				a(ng-href="{{breadCrumb.url}}") {{breadCrumb.text}}
 			block main-content
 
 		include ./views/partials/_footer

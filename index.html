@@ -23,6 +23,8 @@
       </ul>
    </nav>
    <div class="wrapper container">
+      <div ng-show="breadCrumb" class="breadcrumb"> <a ng-href="{{breadCrumb.url}}">{{breadCrumb.text}}</a>
+      </div>
       <!-- top navbar-->
       <header></header>
       <!-- Main section-->

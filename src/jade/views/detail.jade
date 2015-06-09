@@ -1,25 +1,26 @@
-div(ng-controller="courseDetailController")#courseDetail
-	div.courseNav.clearfix
-		h1.title.col-md-6 Cloud Defined
-		.col-md-6.pull-right
-			span.type {{courseDetails.format}}
-			span.time {{courseDetails.timeStats.timeSpent}} mins
-		div.chapters.col-xs-10
-			ul.carousel.clearfix(rn-carousel rn-carousel-controls rn-carousel-index="carouselIndex" ng-show="isMobile()")
-				li(ng-repeat="c in courseDetails.chapters")
-					span {{c.tip}}
-			ul(rn-carousel-index="carouselIndex")
-				li(ng-repeat="c in courseDetails.chapters")
-					a.fa(href="#chapter-{{$index}}" ng-class="c.class" tooltip-placement="bottom" tooltip="{{c.tip}}")
-		div.addnote.col-xs-2
+div#courseDetail
+	div.courseNav.col-md-12
+		.content.clearfix
+			h1.title.col-md-9 {{courseDetails.title}}
+			.right
+				span.type {{courseDetails.format}}
+				span.time {{courseDetails.timeStats.timeSpent}} mins
+			div.chapters.col-sm-9.no-gutters
+				ul.carousel.clearfix(rn-carousel rn-carousel-controls rn-carousel-index="carouselIndex" ng-show="isMobile()")
+					li(ng-repeat="c in courseDetails.chapters")
+						span {{c.tip}}
+				ul.timeLine(rn-carousel-index="carouselIndex")
+					li(ng-repeat="c in courseDetails.chapters")
+						a.fa(href="#chapter-{{$index}}" ng-class="c.class" tooltip-placement="bottom" tooltip="{{c.tip}}")
 			add-note
+	
+			
 				
-	.col-md-12.no-gutters
+	.col-md-12
 		div#ibm-dynid-18_playercontainer
 			a.ibm-video-placeholder(href="#")
-				span.ibm-video-play
 				img(src="/images/fpo-video.png" width="100%" height="100%" alt="Kaltura Education Video Solutions")
-	.tools.col-sm-12.no-gutters.clearfix
+	.tools.col-sm-12.clearfix
 		.col-md-6.no-gutters.pull-right
 			a.col-xs-3.no-gutters
 				img(src="/images/icons/bookmark.png")
@@ -30,41 +31,42 @@ div(ng-controller="courseDetailController")#courseDetail
 			a.col-xs-3.no-gutters
 				img(src="/images/icons/transcript.png")
 				| Transcript
-			a.col-xs-3.no-gutters
+			a.col-xs-3.no-gutters(ng-click="clickToOpen('email')")
 				img(src="/images/icons/email.png")
 				| Email
-	.col-md-12.no-gutters
+	.col-md-12
 		.detail
-			.col-md-8
+			.col-md-8.clearfix
 				h2 Description:
 
-					p
-						span.instructor {{courseDetails.instructor.name}}
-						span.updated Updated 2/2014
-					p.description
-					| Greak Text
+				p
+					span.instructor {{courseDetails.instructor.name}}
+					span.updated Updated 2/2014
+				p.description
+				| Greak Text
 				h2 Roadmaps:
 					a.roadmap IBM Cloud Readiness Roadmap
 				.tags
 					h2 Related Tags:
 					a.tag(ng-repeat="(tag, link)  in courseDetails.relatedTags" ng-href="{{link}}") {{tag}}
-
-				.notes
-					ul
-						li
-							a(href="#notes") Teachers Notes
-						li(href="#resources")
-							a Resources
-					#notes
-						| Greek Text about Notes
-						a(href="#more") Read More
-					#resources
-						| Greek Text about Resources
-						a(href="#more") Read More
+					
+				include partials/_tabs
+					//- ul
+					//- 	li
+					//- 		a(href="#notes") Teachers Notes
+					//- 	li(href="#resources")
+					//- 		a Resources
+					//- #notes
+					//- 	| Greek Text about Notes
+					//- 	a(href="#more") Read More
+					//- #resources
+					//- 	| Greek Text about Resources
+					//- 	a(href="#more") Read More
 
 
 			.extraDetails.col-md-4
-				h2.wylearn What You Learn
+				.wylearn
+					h2 What You Learn
 					ul
 						li What is Cloud?
 						li How to write basic HTML
@@ -82,19 +84,34 @@ div(ng-controller="courseDetailController")#courseDetail
 						.name {{courseDetails.instructor.name}}
 						.title {{courseDetails.instructor.title}}
 						.email 
-							a(href="mailto:{{courseDetails.instructor.email}}" target="_blank") Ask a Question
+							a(ng-click="clickToOpen()" target="_blank") Ask a Question
 					.description.clearfix
-					| Greek Text
-	.relatedContent.col-md-12(ng-show="courseDetails.relatedContent")
-		h2 Related Content:
-	.col-md-12.no-gutters
-		.col-md-6.no-gutters(ng-repeat="card in courseDetails.relatedContent")
+					| {{courseDetails.instructor.description}}
+	.col-md-12.relatedContent.no-gutters(ng-show="courseDetails.relatedContent")
+		h2 Related Courses:
+		.col-md-6(ng-repeat="card in courseDetails.relatedContent")
 			.card(class="{{card.catagory.toLowerCase()}}")
-				h3 {{card.title}}
+				a.header {{card.title}}
 					span.difficulty.easy
 				.content
 					p.catagory Course Catagory: {{card.catagory}}
 					p.description {{card.description}}
 					.tags
 						a.tag(ng-repeat="tag in card.tags" ng-href="{{tag.link}}") {{tag.name}}
+					.activity
+						div.play
+							.resume(ng-show="{{card.remaining < card.duration}}")
+								a
+									span.playBtn(progress-bar remaining="{{card.remaining}}" duration="{{card.duration}}")
+									span Resume
+								span {{card.remaining}} mins remaining
+							.start(ng-show="{{card.remaining == card.duration}}")
+								a
+									span.playBtn
+									span Play
+								span {{card.duration}} mins remaining
+						.courseNav
+							ul.timeLine
+								li(ng-repeat="c in card.chapters")
+									a.fa(href="#chapter-{{$index}}" ng-class="c.class" tooltip-placement="bottom" tooltip="{{c.tip}}")
 

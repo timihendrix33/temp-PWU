@@ -19,29 +19,37 @@
 // Utilities 
 @import "app/utils-definitions";
 
+// Plugins
+@import "../../vendor/ngDialog/css/ngDialog.css";
+@import "../../vendor/ngDialog/css/ngDialog-theme-default.css";
+
 // Bootstrap reset
 @import "app/bootstrap-reset";
 
 
 // IBM v18
-//@import "v18/application";
+@import "v18/application";
 
 // IBM PW
 @import "pw/variables";
 @import "pw/fonts";
 @import "pw/mixins";
-@import "pw/cards";
 
-body.ibm-type{
+.ibm-type{
     font-family:"HelveticaNeue-Light",
     "Helvetica Neue Light",
     "Helvetica Neue",
     Helvetica,
     Arial;
-    font-size: 16px;
     color:#222;
     background-color:$ibm-background;
-}
+  font-size: 12px;
+  @media (min-width: screen-xs-min) { 
+      font-size: 14px;
+   }
+  @media (min-width: $screen-sm-min) { 
+      font-size: 16px;
+   }
 footer{
     padding: 2em;
 }
@@ -50,10 +58,16 @@ a {
 }
 h1,h2,h2,h4,h5{
 	font-weight: normal;
+	@include useLubalinGraphStdBookIBM()
 }
 h2{
-	font-size: 1.2em;
-	@include useLubalinGraphStdBookIBM()
+	font-size: 1.8em;
+	@include useLubalinGraphStdBookIBM();
+	padding-bottom: 15px;
+	a{
+		font-size: .6em;
+		color:$ibm-dark-grey;
+	}
 }
 .wrapper{
 	@include clearfix();
@@ -84,4 +98,44 @@ h2{
   z-index: 2;
 }
 
+.breadcrumb{
+	display: block;
+	&:before{
+		content:" < ";
+		display: inline-block;
+		padding-right: 10px;
+	}
+}
+
+.ibm-container .ibm-tab-section.ibm-text{
+	border:0;
+	.ibm-tabs{
+		li{
+			font-weight: normal;
+			@include useLubalinGraphStdBookIBM();
+			a{
+				color:#cccccc;
+				&:hover{
+					color:$ibm-blue;
+				}
+			}
+			&.ibm-active a{
+				color:#000;
+				&:hover{
+					color:#000;
+				}
+			}
+		}
+	}	
+}
+.tag{
+	@include tag();
+}
+@import "pw/cards";
 @import "pw/pages/courseDetail";
+
+
+
+@import "pw/pages/ngDialog";
+
+}

@@ -1,5 +1,6 @@
-img(src="/images/icons/notes.png")
-span Add a note
+span(ng-click="toggleNote()")
+	img(src="/images/icons/notes.png")
+	| Add a note
 .addNote
 	.content
 		h2 Add a note
@@ -7,4 +8,4 @@ span Add a note
 		input
 		label Note Text:
 		textarea
-		a Cancel
+		a(ng-click="closeNote()") Cancel

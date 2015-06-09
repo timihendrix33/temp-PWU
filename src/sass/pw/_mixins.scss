@@ -2,3 +2,10 @@
 	@include box-shadow(-2px 6px 5px -5px rgba(0,0,0,0.58));
 	@include border-radius(0 0 5px 5px);
 }
+
+@mixin tag{	
+	@include border-radius(3em);
+	padding:.5em 1em;
+	border:1px solid;
+	display: inline-block;
+}

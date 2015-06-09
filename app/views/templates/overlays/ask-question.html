@@ -1,0 +1,22 @@
+<div class="askQuestion">
+   <h2>Ask a question</h2>
+   <p>Your question will be sent to........</p>
+   <div class="instructorDetail">
+      <span class="profilePic">
+         <img ng-src="{{courseDetails.instructor.image}}" />
+      </span>
+      <div class="info">
+         <div class="name">
+            <strong>{{courseDetails.instructor.name}}</strong>
+         </div>
+         <div class="title">{{courseDetails.instructor.title}}</div>
+      </div>
+   </div>
+   <label>From:</label>
+   <input type="email" placeholder="somebodyus.ibm.com" />
+   <label>Note</label>
+   <textarea placeholder="Optional"></textarea>
+   <div class="submit"><a ng-click="closeThisDialog()">Cancel</a>
+      <button class="tag">Send</button>
+   </div>
+</div>
