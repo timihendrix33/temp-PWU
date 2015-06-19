@@ -108,6 +108,13 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
+    .state('dashboard', {
+        url: '/dashboard',
+        controller: 'dashboardController',
+        templateUrl: helper.basepath('dashboard.html'),
+        //resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
+ 
+    })
     // 
     // CUSTOM RESOLVES
     //   Add your own resolves properties
@@ -519,6 +526,26 @@ $scope.clickToOpen = function (template) {
 	}
 
 
+}]);
+App.controller('dashboardController',["$scope", "$rootScope", "$timeout", function($scope,$rootScope,$timeout){	
+
+	$rootScope.breadCrumb = false;
+
+	function showSlide(slide){
+		slide.removeClass('hiddenTop hiddenLeft');
+	}
+
+	$timeout(function(){
+			showSlide($('.slide1'));
+	},1500)
+
+	$timeout(function(){
+			showSlide($('.slide2'));
+	},2500)
+
+	$timeout(function(){
+			showSlide($('.slide3'));
+	},3500)
 }]);
 /**=========================================================
  * Module: main.js

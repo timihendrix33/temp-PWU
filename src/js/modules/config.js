@@ -39,6 +39,13 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
+    .state('dashboard', {
+        url: '/dashboard',
+        controller: 'dashboardController',
+        templateUrl: helper.basepath('dashboard.html'),
+        //resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
+ 
+    })
     // 
     // CUSTOM RESOLVES
     //   Add your own resolves properties

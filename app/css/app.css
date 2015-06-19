@@ -18515,6 +18515,89 @@ html.svg #ibm-search-mobile:hover {
   width: 26px;
   background: url("/images/icons/prevArrow.png") no-repeat;
 }
+.ibm-type .mainNav {
+  display: none;
+}
+.ibm-type #dashboard {
+  width: 100%;
+  max-width: 1200px;
+}
+.ibm-type #dashboard img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.ibm-type #dashboard nav {
+  width: 100%;
+}
+.ibm-type #dashboard #wrapper {
+  position: relative;
+}
+.ibm-type #dashboard #wrapper .panels {
+  width: 100%;
+  overflow: hidden;
+}
+.ibm-type #dashboard #wrapper .panels:before, .ibm-type #dashboard #wrapper .panels:after {
+  content: " ";
+  display: table;
+}
+.ibm-type #dashboard #wrapper .panels:after {
+  clear: both;
+}
+.ibm-type #dashboard #wrapper .panels .slide {
+  z-index: 2;
+  position: relative;
+  display: block;
+  width: 33.5%;
+  margin: 0;
+  padding: 0;
+  float: left;
+  background: #00b2ef;
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  -webkit-transition: all 1.5s ease;
+  -o-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+}
+.ibm-type #dashboard #wrapper .panels .slide.hiddenTop {
+  display: block !important;
+  -moz-transform: translateY(-110%);
+  -ms-transform: translateY(-110%);
+  -webkit-transform: translateY(-110%);
+  transform: translateY(-110%);
+}
+.ibm-type #dashboard #wrapper .panels .slide.hiddenLeft {
+  display: block !important;
+  -moz-transform: translateX(-110%);
+  -ms-transform: translateX(-110%);
+  -webkit-transform: translateX(-110%);
+  transform: translateX(-110%);
+}
+.ibm-type #dashboard #wrapper .panels .slide img {
+  padding-right: 1.5%;
+}
+.ibm-type #dashboard #wrapper .panels .slide.slide3 {
+  width: 33%;
+  float: right;
+}
+.ibm-type #dashboard #wrapper .panels .slide.slide3 img {
+  padding: 0;
+}
+.ibm-type #dashboard #wrapper .video {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
 .ibm-type .ngdialog-content {
   width: 550px;
   color: #6a6a6a;

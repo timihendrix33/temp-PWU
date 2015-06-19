@@ -1,0 +1,68 @@
+.mainNav {
+	display: none;
+}
+#dashboard{
+	width: 100%;
+	max-width: 1200px;
+		img{
+			margin:0;
+			padding:0;
+			width: 100%;
+			display: block;
+			@include border-radius(0);
+		}
+	nav{
+		width: 100%;
+	}
+	#wrapper{
+		position: relative;
+		.panels{
+			width:100%;
+			@include clearfix();
+			overflow: hidden;
+			.slide{
+				z-index: 2;
+				position: relative;
+				display: block;
+				width:33.5%;		
+				margin:0;
+				padding:0;
+				float: left;
+				background: $ibm-blue;
+				@include transform(translateY(0%));
+				@include transform(translateX(0%));
+				  @include transition(all 1.5s ease);
+				&.hiddenTop{
+					display: block!important;
+					@include transform(translateY(-110%));
+				}
+				&.hiddenLeft{
+					display: block!important;
+					@include transform(translateX(-110%));
+				}
+				img{
+					padding-right:1.5%;
+				}
+				&.slide2{
+					img{
+					}
+				}
+				&.slide3{
+					width:33%;
+					float: right;
+					img{
+						padding:0;
+					}
+				}
+			}
+		}
+		.video{
+			z-index: 1;
+			img{
+
+			}
+			position: absolute;
+			top: 0;
+		}
+	}
+}
