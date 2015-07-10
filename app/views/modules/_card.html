@@ -1,0 +1,35 @@
+<div class="card {{card.cardType.toLowerCase()}}">
+   <div class="content clearfix">
+      <span class="difficulty">{{card.difficulty }}</span><a class="header">{{card.title}}</a>
+      <div class="activity">
+         <div ng-hide="{{card.cardType === 'roadmap'}}" class="play">
+            <div ng-show="{{card.cardType != 'external' &amp;&amp; card.remaining &lt; card.duration}}" class="resume">
+               <a>
+                  <span progress-bar="progress-bar" remaining="{{card.remaining}}" duration="{{card.duration}}" class="playBtn"></span>
+                  <span>Resume
+                     <br />{{card.cardType}}</span>
+                  <span class="chevron glyphicon glyphicon-chevron-right"></span>
+               </a>
+            </div>
+            <div ng-show="{{card.cardType != 'external' &amp;&amp; card.remaining == card.duration}}" class="start">
+               <a>
+                  <span class="playBtn"></span>
+                  <span>Play
+                     <br />{{card.cardType}}</span>
+                  <span class="chevron glyphicon glyphicon-chevron-right"></span>
+               </a>
+            </div>
+            <div ng-show="{{card.cardType === 'external'}}" class="external">
+               <a>
+                  <span class="playBtn"></span>
+                  <span>external
+                     <br/>site</span>
+                  <span class="chevron glyphicon glyphicon-chevron-right"></span>
+               </a>
+            </div>
+         </div>
+         <div ng-show="{{card.cardType === 'roadmap'}}" class="play"><a>Roadmap<span class="chevron glyphicon glyphicon-chevron-right"></span></a>
+         </div>
+      </div>
+   </div>
+</div>

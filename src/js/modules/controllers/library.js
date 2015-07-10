@@ -1,4 +1,4 @@
-App.controller('dashboardController',function($scope,$rootScope,$timeout){	
+App.controller('libraryController',function($scope,$rootScope,$timeout){	
 
 	$rootScope.breadCrumb = false;
 

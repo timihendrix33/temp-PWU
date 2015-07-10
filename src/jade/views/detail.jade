@@ -89,29 +89,6 @@ div#courseDetail
 					| {{courseDetails.instructor.description}}
 	.col-md-12.relatedContent.no-gutters(ng-show="courseDetails.relatedContent")
 		h2 Related Courses:
-		.col-md-6(ng-repeat="card in courseDetails.relatedContent")
-			.card(class="{{card.catagory.toLowerCase()}}")
-				a.header {{card.title}}
-					span.difficulty.easy
-				.content
-					p.catagory Course Catagory: {{card.catagory}}
-					p.description {{card.description}}
-					.tags
-						a.tag(ng-repeat="tag in card.tags" ng-href="{{tag.link}}") {{tag.name}}
-					.activity
-						div.play
-							.resume(ng-show="{{card.remaining < card.duration}}")
-								a
-									span.playBtn(progress-bar remaining="{{card.remaining}}" duration="{{card.duration}}")
-									span Resume
-								span {{card.remaining}} mins remaining
-							.start(ng-show="{{card.remaining == card.duration}}")
-								a
-									span.playBtn
-									span Play
-								span {{card.duration}} mins remaining
-						.courseNav
-							ul.timeLine
-								li(ng-repeat="c in card.chapters")
-									a.fa(href="#chapter-{{$index}}" ng-class="c.class" tooltip-placement="bottom" tooltip="{{c.tip}}")
-
+		.cards
+			div(ng-repeat="card in courseDetails.relatedContent")
+				include ./modules/_card

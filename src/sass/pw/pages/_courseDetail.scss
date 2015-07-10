@@ -237,8 +237,20 @@ ul.timeLine li{
 	} 
 }
 
-.relatedContent h2{
-	padding:1em 2em;
+.relatedContent{
+	width:100%;
+	> div{
+		display: -ms-flex;
+		display: -webkit-flex;
+		display: flex;
+		> div {
+			min-width: 230px;
+			padding: 10px;
+		}
+	}
+	 h2{
+		padding:1em 2em;
+	}
 }
 
 .rn-carousel-control.rn-carousel-control-next{

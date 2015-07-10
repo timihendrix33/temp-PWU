@@ -23,7 +23,9 @@ App
     'blue':                   '#4687e9',
     'ibm-blue':               '#00b2ef',
     'ibm-dark-grey':          '#6a6a6a',
-    'ibm-background':         '#f4f4f4'
+    'ibm-background':         '#f4f4f4',
+    'ibm-orange':             '#f04e37',
+    'navy':                   '#485368'
   })
   .constant('APP_MEDIAQUERY', {
     'desktopLG':             1200,

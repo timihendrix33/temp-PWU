@@ -13,8 +13,8 @@ App.directive('progressBar', function(colors) {
         var moveTo = (attribute.duration - attribute.remaining) / attribute.duration;
 
         var circle = new ProgressBar.Circle($(element)[0], {
-              color: colors.byName('ibm-blue'),
-              strokeWidth: 5,
+              color: colors.byName('ibm-orange'),
+              strokeWidth: 10,
               trailColor: '#fff'
           });
           circle.animate(moveTo, {

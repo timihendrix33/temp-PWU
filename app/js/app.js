@@ -115,6 +115,13 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
         //resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
  
     })
+    .state('library', {
+        url: '/library',
+        controller: 'libraryController',
+        templateUrl: helper.basepath('library.html'),
+        //resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
+ 
+    })
     // 
     // CUSTOM RESOLVES
     //   Add your own resolves properties
@@ -196,7 +203,9 @@ App
     'blue':                   '#4687e9',
     'ibm-blue':               '#00b2ef',
     'ibm-dark-grey':          '#6a6a6a',
-    'ibm-background':         '#f4f4f4'
+    'ibm-background':         '#f4f4f4',
+    'ibm-orange':             '#f04e37',
+    'navy':                   '#485368'
   })
   .constant('APP_MEDIAQUERY', {
     'desktopLG':             1200,
@@ -415,11 +424,11 @@ $scope.clickToOpen = function (template) {
 	}
 	$scope.relatedContent = [
 		{
-			title:'Suspendisse Fermentum',
-			difficulty:1,
+			title:'Identifying opportunities for cloud infrastucture',
+			difficulty:'Foundational & Intermediate',
 			duration:60,
-			catagory:'Cloud',
 			remaining:10,
+			cardType:'video',
 			description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			tags:[{
 				name:'magna',
@@ -449,10 +458,84 @@ $scope.clickToOpen = function (template) {
 				},
 		{
 			title:'Celerisque',
-			difficulty:2,
+			difficulty:'Advanced',
 			duration:60,
 			remaining:60,
-			catagory:'Cloud',
+			cardType:'lecture',
+			description:'Greek Text',
+			tags:[{
+				name:'Nula',
+				link:'link'
+			},{
+				name:'Maxima',
+				link:'link'
+			}],
+			chapters:[
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'Chapter 3: What is Cloud'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-check end',
+					'tip':'Survey: What you\'ve learned'
+				}
+			]
+		},
+		{
+			title:'IBM Systems CASE for power sales',
+			difficulty:null,
+			duration:60,
+			remaining:60,
+			cardType:'external',
+			description:'Greek Text',
+			tags:[{
+				name:'Nula',
+				link:'link'
+			},{
+				name:'Maxima',
+				link:'link'
+			}],
+			chapters:[
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'Chapter 3: What is Cloud'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-check end',
+					'tip':'Survey: What you\'ve learned'
+				}
+			]
+		},
+		{
+			title:'Cloud Readiness',
+			difficulty:null,
+			duration:60,
+			remaining:60,
+			cardType:'roadmap',
 			description:'Greek Text',
 			tags:[{
 				name:'Nula',
@@ -533,20 +616,38 @@ App.controller('dashboardController',["$scope", "$rootScope", "$timeout", functi
 
 	function showSlide(slide){
 		slide.removeClass('hiddenTop hiddenLeft');
-	}
+	};
 
 	$timeout(function(){
 			showSlide($('.slide1'));
+		$timeout(function(){
+				showSlide($('.slide2'));
+			$timeout(function(){
+					showSlide($('.slide3'));
+			},1500)
+		},1500)
 	},1500)
-
-	$timeout(function(){
-			showSlide($('.slide2'));
-	},2500)
-
-	$timeout(function(){
-			showSlide($('.slide3'));
-	},3500)
 }]);
+
+App.controller('libraryController',["$scope", "$rootScope", "$timeout", function($scope,$rootScope,$timeout){	
+
+	$rootScope.breadCrumb = false;
+
+	function showSlide(slide){
+		slide.removeClass('hiddenTop hiddenLeft');
+	};
+
+	$timeout(function(){
+			showSlide($('.slide1'));
+		$timeout(function(){
+				showSlide($('.slide2'));
+			$timeout(function(){
+					showSlide($('.slide3'));
+			},1500)
+		},1500)
+	},1500)
+}]);
+
 /**=========================================================
  * Module: main.js
  * Main Application Controller
@@ -1293,8 +1394,8 @@ App.directive('progressBar', ["colors", function(colors) {
         var moveTo = (attribute.duration - attribute.remaining) / attribute.duration;
 
         var circle = new ProgressBar.Circle($(element)[0], {
-              color: colors.byName('ibm-blue'),
-              strokeWidth: 5,
+              color: colors.byName('ibm-orange'),
+              strokeWidth: 10,
               trailColor: '#fff'
           });
           circle.animate(moveTo, {

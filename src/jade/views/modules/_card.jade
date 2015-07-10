@@ -1,0 +1,25 @@
+.card(class="{{card.cardType.toLowerCase()}}")
+	.content.clearfix
+		span.difficulty {{card.difficulty }}
+		a.header {{card.title}}
+		.activity
+			div.play(ng-hide="{{card.cardType === 'roadmap'}}")
+				.resume(ng-show="{{card.cardType != 'external' && card.remaining < card.duration}}")
+					a
+						span.playBtn(progress-bar remaining="{{card.remaining}}" duration="{{card.duration}}")
+						span Resume<br />{{card.cardType}}
+						span.chevron.glyphicon.glyphicon-chevron-right
+				.start(ng-show="{{card.cardType != 'external' && card.remaining == card.duration}}")
+					a
+						span.playBtn
+						span Play<br />{{card.cardType}}
+						span.chevron.glyphicon.glyphicon-chevron-right
+
+				.external(ng-show="{{card.cardType === 'external'}}")
+					a
+						span.playBtn
+						span external<br/>site
+						span.chevron.glyphicon.glyphicon-chevron-right
+			div.play(ng-show="{{card.cardType === 'roadmap'}}")
+				a Roadmap
+					span.chevron.glyphicon.glyphicon-chevron-right

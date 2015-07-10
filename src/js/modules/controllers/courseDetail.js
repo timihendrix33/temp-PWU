@@ -80,11 +80,11 @@ $scope.clickToOpen = function (template) {
 	}
 	$scope.relatedContent = [
 		{
-			title:'Suspendisse Fermentum',
-			difficulty:1,
+			title:'Identifying opportunities for cloud infrastucture',
+			difficulty:'Foundational & Intermediate',
 			duration:60,
-			catagory:'Cloud',
 			remaining:10,
+			cardType:'video',
 			description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			tags:[{
 				name:'magna',
@@ -114,10 +114,84 @@ $scope.clickToOpen = function (template) {
 				},
 		{
 			title:'Celerisque',
-			difficulty:2,
+			difficulty:'Advanced',
 			duration:60,
 			remaining:60,
-			catagory:'Cloud',
+			cardType:'lecture',
+			description:'Greek Text',
+			tags:[{
+				name:'Nula',
+				link:'link'
+			},{
+				name:'Maxima',
+				link:'link'
+			}],
+			chapters:[
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'Chapter 3: What is Cloud'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-check end',
+					'tip':'Survey: What you\'ve learned'
+				}
+			]
+		},
+		{
+			title:'IBM Systems CASE for power sales',
+			difficulty:null,
+			duration:60,
+			remaining:60,
+			cardType:'external',
+			description:'Greek Text',
+			tags:[{
+				name:'Nula',
+				link:'link'
+			},{
+				name:'Maxima',
+				link:'link'
+			}],
+			chapters:[
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'Chapter 3: What is Cloud'
+				},
+				{
+					'class':'fa-chevron-right',
+					'tip':'try this out'
+				},
+				{
+					'class':'fa-check end',
+					'tip':'Survey: What you\'ve learned'
+				}
+			]
+		},
+		{
+			title:'Cloud Readiness',
+			difficulty:null,
+			duration:60,
+			remaining:60,
+			cardType:'roadmap',
 			description:'Greek Text',
 			tags:[{
 				name:'Nula',

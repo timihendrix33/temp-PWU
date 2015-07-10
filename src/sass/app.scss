@@ -34,7 +34,12 @@
 @import "pw/variables";
 @import "pw/fonts";
 @import "pw/mixins";
-
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 .ibm-type{
     font-family:"HelveticaNeue-Light",
     "Helvetica Neue Light",
@@ -71,6 +76,7 @@ h2{
 }
 .wrapper{
 	@include clearfix();
+	margin-top:$navHeight;
 }
 
 .no-gutters {
@@ -131,6 +137,7 @@ h2{
 .tag{
 	@include tag();
 }
+@import "pw/nav";
 @import "pw/cards";
 @import "pw/pages/courseDetail";
 @import "pw/pages/dashboard";
