@@ -83,7 +83,7 @@ $scope.clickToOpen = function (template) {
 			title:'Identifying opportunities for cloud infrastucture',
 			difficulty:'Foundational & Intermediate',
 			duration:60,
-			remaining:10,
+			remaining:42,
 			cardType:'video',
 			description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			tags:[{

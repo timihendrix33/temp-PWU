@@ -49,9 +49,8 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
     .state('library', {
         url: '/library',
         controller: 'libraryController',
-        templateUrl: helper.basepath('library.html'),
-        //resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
- 
+        templateUrl: helper.basepath('library.html'), 
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
     })
     // 
     // CUSTOM RESOLVES

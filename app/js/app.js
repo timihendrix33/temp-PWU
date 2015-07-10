@@ -118,9 +118,8 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
     .state('library', {
         url: '/library',
         controller: 'libraryController',
-        templateUrl: helper.basepath('library.html'),
-        //resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
- 
+        templateUrl: helper.basepath('library.html'), 
+        resolve: helper.resolveFor('fastclick', 'modernizr', 'fontawesome')
     })
     // 
     // CUSTOM RESOLVES
@@ -427,7 +426,7 @@ $scope.clickToOpen = function (template) {
 			title:'Identifying opportunities for cloud infrastucture',
 			difficulty:'Foundational & Intermediate',
 			duration:60,
-			remaining:10,
+			remaining:42,
 			cardType:'video',
 			description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			tags:[{
@@ -629,23 +628,16 @@ App.controller('dashboardController',["$scope", "$rootScope", "$timeout", functi
 	},1500)
 }]);
 
-App.controller('libraryController',["$scope", "$rootScope", "$timeout", function($scope,$rootScope,$timeout){	
+App.controller('libraryController',["$scope", "$rootScope", function($scope,$rootScope){	
+	// $rootScope.breadCrumb = {
+	// 	text:"Cloud Readiness Roadmap",
+	// 	url:"/#/roadmap"
+	// }
 
-	$rootScope.breadCrumb = false;
 
-	function showSlide(slide){
-		slide.removeClass('hiddenTop hiddenLeft');
-	};
 
-	$timeout(function(){
-			showSlide($('.slide1'));
-		$timeout(function(){
-				showSlide($('.slide2'));
-			$timeout(function(){
-					showSlide($('.slide3'));
-			},1500)
-		},1500)
-	},1500)
+
+
 }]);
 
 /**=========================================================
