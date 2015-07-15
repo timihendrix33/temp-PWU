@@ -1,0 +1,38 @@
+.form-control {
+	border-radius: 0;
+	&[type="search"] {
+		border: none;
+		border-bottom: 2px solid $white;
+		background: transparent;
+		padding: 6px 16px 6px 0;
+		font-size: 1.5em;
+		&::-webkit-input-placeholder {
+		   color: $white;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+		   color: $white;  
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+		   color: $white;  
+		}
+
+		&:-ms-input-placeholder {  
+		   color: $white;  
+		}		
+	}
+}
+.fa-search {
+	font-size: 1.5em;
+	position: relative;
+	float: right;
+	top: -29px;
+	right: -33px;
+	color: $white;
+	width: 50px;			
+}
+
+select {
+	background:$white;
+}

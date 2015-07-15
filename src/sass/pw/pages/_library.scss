@@ -1,3 +1,9 @@
 #library{
-	
+	.lib-search {
+		background: $navy;
+		@include clearfix();
+	}
 }
+
+
+

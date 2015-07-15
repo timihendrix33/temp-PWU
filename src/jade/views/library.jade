@@ -1,2 +1,55 @@
-div#library 
-	| This is a Library
+div#library
+	div.lib-search.full-width
+		form
+			div.form-group
+				label(for='librarySearch')
+				input(
+					type='search'
+					class='form-control'
+					placeholder='Search the library.'
+				)
+				i.fa.fa-search
+
+		form.form-inline
+			div.form-group
+				select.form-control
+					option cloud
+					option analytics
+					option mobile
+					option social
+					option security
+					option systems
+					option watson
+					option commerce        
+			div.form-group
+				select.form-control
+					option sales
+					option marketing
+					option technical
+					option operational                        
+			div.form-group
+				select.form-control
+					option finance
+					option services
+					option software
+					option hardware
+			div.form-group
+				select.form-control
+					option foundational
+					option intermediate
+					option experienced
+
+	div.lib-content
+		ul.sort Sort by:
+			li
+				a Recommended for you
+			li 
+				a Latest
+			li 
+				a Most Popular
+		h2 Roadmaps
+		p
+			a View all 8
+		div.cards
+			div(ng-repeat="card in library.roadmapCards")
+				include ./modules/_card

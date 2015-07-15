@@ -137,8 +137,17 @@ h2{
 .tag{
 	@include tag();
 }
+
+.full-width {
+	margin:0 -9999rem;
+	padding:0 9999rem;
+}
+
+
+
 @import "pw/nav";
 @import "pw/cards";
+@import "pw/forms";
 @import "pw/pages/courseDetail";
 @import "pw/pages/dashboard";
 @import "pw/pages/library";
